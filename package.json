@@ -1,6 +1,6 @@
 {
   "name": "randsuite",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -8,6 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
     ,"run": "node index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Charles DiLaurenzio",
+  "license": "Apache 2.0"
 }
