@@ -1,8 +1,8 @@
 'use strict'
 
-import Base from './base/base.js'
+import Generator from './base/generator.js'
 
-class MathRNG extends Base
+class MathRNG extends Generator
 {
 	adjust(value)
 	{

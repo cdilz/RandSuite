@@ -2,7 +2,7 @@
 
 import crypto from 'crypto'
 
-class Base
+class Generator
 {
 	get min() {return 0n}
 	get max() {return (2n ** BigInt(this.bits)) - 1n}
@@ -138,4 +138,4 @@ class Base
 	}
 }
 
-export default Base
+export default Generator

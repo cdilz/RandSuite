@@ -2,12 +2,16 @@
   "name": "randsuite",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    ,"run": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node ./src/index.js",
+    "doc": "jsdoc src -r -d docs"
   },
   "author": "Charles DiLaurenzio",
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "eslint": "^7.15.0"
+  }
 }

@@ -1,9 +1,9 @@
 'use strict'
 
-import Base from './base/base.js'
+import Generator from './base/generator.js'
 import crypto from 'crypto'
 
-class CryptoRNG extends Base
+class CryptoRNG extends Generator
 {
 	random()
 	{

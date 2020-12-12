@@ -19,14 +19,14 @@ class Card
 		this.suit = suit
 		this.faceUp = faceUp
 
-		if(typeof this.faceUp != typeof true || !(b instanceof Boolean))
+		if(typeof this.faceUp != typeof true || !(this.faceUp instanceof Boolean))
 		{
 			this.faceUp = false
 		}
 
 		this.orientation = orientation
 
-		if(typeof this.orientation != typeof 0 || !(b instanceof Number))
+		if(typeof this.orientation != typeof 0 || !(this.orientation instanceof Number))
 		{
 			this.orientation = 0n
 		}

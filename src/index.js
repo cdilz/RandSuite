@@ -1,35 +1,49 @@
 'use strict'
 
 import XORShift from './generator/xorshift.js'
-
-// All values use BigInt
+/** 
+ * Class representing a suite of random number generation needs
+ */
 class RandSuite
 {
-	// Generator must be a pre-seeded random number generator that implements the random function
-	// If it's undefined we create one using XORWow
+	/**
+	 * Creates a suite of random number generation needs
+	 * @param {Generator} [generator=XORWow] - a random number generator based off of the Generator class
+	 */
 	constructor(generator)
 	{
 		if(typeof generator === typeof undefined)
 		{
-			generator = new XORShift(XorShift.styles.XORWOW, seed)
+			generator = new XORShift(XORShift.styles.XORWOW)
 		}	
 		
 		this.generator = generator
 	}
 
-	// Returns a random number
+	/**
+	 * Returns a random number
+	 * @returns {BigInt} - A random number based on this.generator
+	 */
 	random()
 	{
 		return this.generator.random()
 	}
 
-	// alias for random()
+	/**
+	 * Alias for this.random()
+	 * @returns {BigInt} - A random number based on this.generator
+	 */
 	number()
 	{
 		return this.random()
 	}
 
-	// Random between two values, inclusive
+	/**
+	 * Outputs a random number between two values, inclusive
+	 * @param {BigInt} min - Smallest number the values can be
+	 * @param {BigInt} max - Largest number the values can be
+	 * @returns {BigInt}
+	 */
 	numberBetween(min, max)
 	{
 		min = BigInt(min)
@@ -75,20 +89,28 @@ class RandSuite
 		return output
 	}
 
-	// Returns either true or false
+	/**
+	 * Outputs a random boolean
+	 * @returns {Boolean}
+	 */
 	bool()
 	{
 		let rand = this.numberBetween(0, 1)
 		return !!rand
 	}
 
-	// Rolls a single die
+	/**
+	 * Rolls a single die
+	 * @returns {BigInt}
+	 */
 	die(sides = 6)
 	{
 		return this.numberBetween(1,sides)
 	}
 
-	// Rolls a number of dice and adds them together
+	/**
+	 * Rolls multiple dice and adds them together
+	 */
 	diceAdd(count = 1, sides = 6)
 	{
 		let arr = this.dice(count, sides)
@@ -138,7 +160,7 @@ class RandSuite
 		let output = []
 		for(let i = 0; i < count; i++)
 		{
-			output.push(flip())
+			output.push(this.flip())
 		}
 
 		return output
@@ -164,3 +186,13 @@ class RandSuite
 }
 
 export default RandSuite
+
+
+
+
+/*
+	TODO:
+		- Maybe eplace this entire thing with multiple exports from various other classes such as:
+			- Export Die as Die from './die/die.js'
+			- Export Standard as Deck from './deck/standard.js'
+*/

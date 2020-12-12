@@ -1,8 +1,8 @@
 'use strict'
 
-import Base from './base.js'
+import Generator from './generator.js'
 
-class XorBase extends Base
+class XorBase extends Generator
 {
 	constructor(args)
 	{
