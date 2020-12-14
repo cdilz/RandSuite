@@ -8,7 +8,7 @@ class XORShiftPlus extends XorBase
 	{
 		super(args)
 
-		this.state = this.splitSeed(this.seed, 2)
+		this.state = this.splitSeed(2)
 	}
 
 	random()

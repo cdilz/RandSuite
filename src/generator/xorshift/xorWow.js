@@ -8,7 +8,7 @@ class XORWow extends XorBase
 	{
 		super(args)
 
-		this.state = this.splitSeed(this.seed, 6)
+		this.state = this.splitSeed(6)
 	}
 
 	random()

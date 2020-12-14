@@ -29,74 +29,9 @@ class RandSuite
 		return this.generator.random()
 	}
 
-	/**
-	 * Alias for this.random()
-	 * @returns {BigInt} - A random number based on this.generator
-	 */
-	number()
+	numberBetween(a, b)
 	{
-		return this.random()
-	}
-
-	/**
-	 * Outputs a random number between two values, inclusive
-	 * @param {BigInt} min - Smallest number the values can be
-	 * @param {BigInt} max - Largest number the values can be
-	 * @returns {BigInt}
-	 */
-	numberBetween(min, max)
-	{
-		min = BigInt(min)
-		max = BigInt(max)
-		
-		let actualMax = max
-
-		let diff = max - min
-
-		if(BigInt(diff) > BigInt(this.generator.max))
-		{
-			let error = 'Difference between min and max is larger than the generator\'s maximum.\n'
-			error += 'Please either:\n'
-			error += '	- Increase min\n'
-			error += '	- Decrease max\n'
-			error += '	- Both of the above'
-			throw error
-		}
-
-		if(max == min)
-		{
-			return min
-		}
-
-		if(min > max)
-		{
-			let swap = max
-			max = min
-			min = swap
-		}
-
-		if(min != 0n)
-		{
-			actualMax = max - min
-		}
-
-		let value = this.random()
-
-		let mod = actualMax + 1n
-		let output = value % mod
-		output += min
-		
-		return output
-	}
-
-	/**
-	 * Outputs a random boolean
-	 * @returns {Boolean}
-	 */
-	bool()
-	{
-		let rand = this.numberBetween(0, 1)
-		return !!rand
+		return this.generator.numberBetween(a, b)
 	}
 
 	/**
@@ -169,14 +104,18 @@ class RandSuite
 	// Returns a random entry from a list
 	arrayEntry(array)
 	{
-		let index = this.numberBetween(0, array.length - 1)
-		return array[index]
+		return this.generator.arrayEntry(array)
 	}
 
 	// Pulls a random character out of a string
 	character(string)
 	{
 		return this.arrayEntry(string)
+	}
+
+	bool()
+	{
+		return this.generator.bool()
 	}
 	/*
 		TODO:
