@@ -28,6 +28,40 @@
               
                 
                 <li><a
+                  href='#card'
+                  class=" toggle-sibling">
+                  Card
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#cardequals'
+                        class='regular pre-open'>
+                        #equals
+                      </a></li>
+                      
+                      <li><a
+                        href='#cardtostring'
+                        class='regular pre-open'>
+                        #toString
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
                   href='#deck'
                   class=" toggle-sibling">
                   Deck
@@ -313,6 +347,240 @@
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='card'>
+      Card
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Class representing a playing card.</p>
+
+    <div class='pre p1 fill-light mt0'>new Card(color: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, rank: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, suit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, faceUp: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>, orientation: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>color</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The color of the card suit, usually black and red in a standard deck.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>rank</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The rank of the card, usually Ace, 2, 3, etc in a standard deck.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>suit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    The suit of a card, usually clubs, spades, hearts, and diamonds in a standard deck.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>faceUp</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+	    True if face up, false if it isn't.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>orientation</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    Degrees turned the card is. 0 is normal, 180 is upside down.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='cardequals'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>equals(card)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Checks if the input card is equal to this card.</p>
+
+    <div class='pre p1 fill-light mt0'>equals(card: <a href="#card">Card</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>card</span> <code class='quiet'>(<a href="#card">Card</a>)</code>
+	    Card to compare to
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='cardtostring'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>toString()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Outputs the card as a string.</p>
+
+    <div class='pre p1 fill-light mt0'>toString(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+        String representation of this card as color rank of suit
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='deck'>
       Deck
     </h3>
@@ -528,7 +796,7 @@
 
   <p>Adds a card to the deck.</p>
 
-    <div class='pre p1 fill-light mt0'>addCard(card: Card)</div>
+    <div class='pre p1 fill-light mt0'>addCard(card: <a href="#card">Card</a>)</div>
   
   
 
@@ -545,7 +813,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>card</span> <code class='quiet'>(Card)</code>
+            <span class='code bold'>card</span> <code class='quiet'>(<a href="#card">Card</a>)</code>
 	    
           </div>
           
@@ -590,7 +858,7 @@
 
   <p>Removes a card from the deck.</p>
 
-    <div class='pre p1 fill-light mt0'>removeCard(card: Card)</div>
+    <div class='pre p1 fill-light mt0'>removeCard(card: <a href="#card">Card</a>)</div>
   
   
 
@@ -607,7 +875,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>card</span> <code class='quiet'>(Card)</code>
+            <span class='code bold'>card</span> <code class='quiet'>(<a href="#card">Card</a>)</code>
 	    
           </div>
           
@@ -652,7 +920,7 @@
 
   <p>Draws a random card from the deck.</p>
 
-    <div class='pre p1 fill-light mt0'>drawRandom(): Card</div>
+    <div class='pre p1 fill-light mt0'>drawRandom(): <a href="#card">Card</a></div>
   
   
 
@@ -670,7 +938,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>Card</code>:
+      <code><a href="#card">Card</a></code>:
         The card that was drawn.
 
       
@@ -709,7 +977,7 @@
 
   <p>Draws a card from the top of the deck.</p>
 
-    <div class='pre p1 fill-light mt0'>draw(): Card</div>
+    <div class='pre p1 fill-light mt0'>draw(): <a href="#card">Card</a></div>
   
   
 
@@ -727,7 +995,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>Card</code>:
+      <code><a href="#card">Card</a></code>:
         The card that was drawn.
 
       
@@ -766,7 +1034,7 @@
 
   <p>Reveals a card at a specific position in the deck.</p>
 
-    <div class='pre p1 fill-light mt0'>inspect(index: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): Card</div>
+    <div class='pre p1 fill-light mt0'>inspect(index: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="#card">Card</a></div>
   
   
 
@@ -798,7 +1066,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>Card</code>:
+      <code><a href="#card">Card</a></code>:
         The card at that position in the deck.
 
       
