@@ -3,23 +3,29 @@
 import crypto from 'crypto'
 
 /**
- * Class representing a random number generator.
- * 
- * To be used as a superclass only.
+ * Represents a random number generator. To be used as a superclass only.
+ *  
+ * @param {Object} args - Contains the number of bits for the generator and the seed.
+ * @param {Number} [args.bits=128] - The maximal number of bits the random number can be.
+ * @param {BigInt|Number|String|Buffer} [args.seed] - The seed for the random number generator. (May be ignored)
  */
 
 class Generator
 {
+	/**
+	 * Minimum value for RNG based on bits (should always be 0).
+	 * 
+	 * @type {BigInt}
+	 */
 	get min() {return 0n}
-	get max() {return (2n ** BigInt(this.bits)) - 1n}
 
 	/**
-	 * Object representing the basis of the random number generator.
+	 * Maximum value of RNG based on bits: (2^this.bits) - 1.
 	 * 
-	 * @param {Object} args - Contains the number of bits for the generator and the seed.
-	 * @param {Number} [args.bits=128] - The maximal number of bits the random number can be.
-	 * @param {BigInt|Number|String|Buffer} [args.seed] - The seed for the random number generator. (May be ignored)
+	 * @type {BigInt}
 	 */
+	get max() {return (2n ** BigInt(this.bits)) - 1n}
+
 	constructor(args)
 	{
 		if(typeof args.bits != typeof 0)
@@ -160,7 +166,6 @@ class Generator
 		return this.fixBits(output)
 	}
 
-	// Flips the binary value so the rightmost bedcomes the leftmost
 	/**
 	 * Flips the binary representation of the input value. The final digit becomes the first, the second to last becomes the second, etc.
 	 * 
@@ -170,7 +175,6 @@ class Generator
 	 */
 	reverseBits(value)
 	{
-		//let reversed = []
 		let valStr = value.toString(2)
 		let bVal = valStr.padStart(this.bits, '0')
 
