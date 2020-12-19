@@ -9,6 +9,8 @@ import Card from './base/card.js'
  * @extends Deck
  * 
  * @param {Generator} generator - Random number generator to use with the deck.
+ * 
+ * @inheritdoc
  */
 class Standard extends Deck
 {

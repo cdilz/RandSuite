@@ -9,6 +9,8 @@ import Standard from './base/deck.js'
  * @extends Standard
  * 
  * @param {Generator} generator - Random number generator to use with the deck.
+ * 
+ * @inheritdoc
  */
 class StandardWithJoker extends Standard
 {

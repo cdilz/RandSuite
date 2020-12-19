@@ -18,6 +18,8 @@ import Generator from './generator.js'
  * @param {Number} [args.bits=128] - The maximal number of bits the random number can be.
  * @param {BigInt|Number|String|Buffer} [args.seed] - The seed for the random number generator. (May be ignored)
  * @param {BigInt[]|Number[]|String[]|Buffer[]} [args.triple=[23n, 17n, 26n]] - A triple value used in the RNG. This varies depending on the bits, I don't currently have a way of automatically finding one.
+ * 
+ * @inheritdoc
  */
 class XorBase extends Generator
 {
