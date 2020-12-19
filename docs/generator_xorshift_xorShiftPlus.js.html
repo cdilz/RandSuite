@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: generator/xorshift/xorShiftPlus.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,64 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: generator/xorshift/xorShiftPlus.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
 
+throw 'Not Yet Implemented'
 
-    <h3> </h3>
+import XorBase from '../base/xorBase.js'
 
+/**
+ * NON-FUNCTIONAL
+ * 
+ * Class representing the XORShift+ random number generator.
+ * 
+ * @extends XorBase
+ * 
+ * @inheritdoc
+ */
+class XORShiftPlus extends XorBase
+{
+	constructor(args)
+	{
+		super(args)
 
+		this.state = this.splitSeed(2)
+	}
 
+	/**
+	 * Uses XOR and bit shifts to generate a pseudorandom number.
+	 * 
+	 * @returns {BigInt}
+	 */
+	random()
+	{
+		let x = this.state[0]
+		let y = this.state[1]
+		
+		this.state[0] = this.state[1]
 
+		x = this.fixBits(x ^ this.fixBits(x &lt;&lt; this.triple[0]))
+		x = this.fixBits(x ^ this.fixBits(x >> this.triple[1]))
+		x = this.fixBits(x ^ this.fixBits(y ^ this.fixBits(y >> this.triple[2])))
 
+		this.state[1] = x
 
+		return this.fixBits(x + y)
+	}
+}
 
-
-
-
-    
-
-
-
-
-
+export default XORShiftPlus</code></pre>
+        </article>
+    </section>
 
 
 
