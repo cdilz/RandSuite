@@ -3,8 +3,21 @@
 import Generator from './base/generator.js'
 import crypto from 'crypto'
 
+/**
+ * Class representing a random number generator with a crypto backend.
+ * 
+ * @extends Generator
+ * 
+ * @inheritdoc
+ */
 class CryptoRNG extends Generator
 {
+
+	/**
+	 * Uses crypto's randomBytes to generate a string, then converts the string to numbers.
+	 * 
+	 * @returns {BigInt}
+	 */
 	random()
 	{
 		let bytes = Math.ceil(this.bits/8)

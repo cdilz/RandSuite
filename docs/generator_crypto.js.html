@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: generator/xorshift/xorShiftPlus.js</title>
+    <title>JSDoc: Source: generator/crypto.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: generator/xorshift/xorShiftPlus.js</h1>
+    <h1 class="page-title">Source: generator/crypto.js</h1>
 
     
 
@@ -28,51 +28,41 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict'
 
-throw 'Not Yet Implemented'
-
-import XorBase from '../base/xorBase.js'
+import Generator from './base/generator.js'
+import crypto from 'crypto'
 
 /**
- * NON-FUNCTIONAL
+ * Class representing a random number generator with a crypto backend.
  * 
- * Class representing the XORShift+ random number generator.
- * 
- * @extends XorBase
+ * @extends Generator
  * 
  * @inheritdoc
  */
-class XORShiftPlus extends XorBase
+class CryptoRNG extends Generator
 {
-	constructor(args)
-	{
-		super(args)
-
-		this.state = this.splitSeed(2)
-	}
 
 	/**
-	 * Uses XOR and bit shifts to generate a pseudorandom number.
+	 * Uses crypto's randomBytes to generate a string, then converts the string to numbers.
 	 * 
 	 * @returns {BigInt}
 	 */
 	random()
 	{
-		let x = this.state[0]
-		let y = this.state[1]
-		
-		this.state[0] = this.state[1]
+		let bytes = Math.ceil(this.bits/8)
+		let byteBuffer = crypto.randomBytes(bytes)
+		let randString = ''
+		for(let i = 0; i &lt; byteBuffer.length; i++)
+		{
+			randString += byteBuffer[i].toString()
+		}
 
-		x = this.fixBits(x ^ this.fixBits(x &lt;&lt; this.triple[0]))
-		x = this.fixBits(x ^ this.fixBits(x >> this.triple[1]))
-		x = this.fixBits(x ^ this.fixBits(y ^ this.fixBits(y >> this.triple[2])))
+		randString = BigInt(randString)
 
-		this.state[1] = x
-
-		return this.fixBits(x + y)
+		return this.fixBits(randString)
 	}
 }
 
-export default XORShiftPlus</code></pre>
+export default CryptoRNG</code></pre>
         </article>
     </section>
 
