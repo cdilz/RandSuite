@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Generator</title>
+    <title>JSDoc: Class: MathRNG</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Generator</h1>
+    <h1 class="page-title">Class: MathRNG</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Generator<span class="signature">(args)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>MathRNG<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Represents a random number generator. To be used as a superclass only.</div>
+            <div class="class-description">Class representing a random number generator that uses the built in Math.random().</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="Generator"><span class="type-signature"></span>new Generator<span class="signature">(args)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MathRNG"><span class="type-signature"></span>new MathRNG<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -58,170 +58,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>args</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Contains the number of bits for the generator and the seed.
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>bits</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    128
-                
-                </td>
-            
-
-            <td class="description last">The maximal number of bits the random number can be.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>seed</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">BigInt</span>
-|
-
-<span class="param-type">Number</span>
-|
-
-<span class="param-type">String</span>
-|
-
-<span class="param-type">Buffer</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last">The seed for the random number generator. (May be ignored)</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -257,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line13">line 13</a>
+        <a href="generator_mathrng.js.html">generator/mathrng.js</a>, <a href="generator_mathrng.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -289,6 +125,17 @@
 
     
     </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Generator.html">Generator</a></li>
+    </ul>
+
 
     
 
@@ -338,6 +185,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#max">Generator#max</a>
+    </li></ul></dd>
     
 
     
@@ -411,6 +263,11 @@
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#min">Generator#min</a>
+    </li></ul></dd>
+    
 
     
 
@@ -454,6 +311,143 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="adjust"><span class="type-signature"></span>adjust<span class="signature">(value)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    'Adjusts' a floating point by removing non-decimal characters.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number to be 'adjusted'</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="generator_mathrng.js.html">generator/mathrng.js</a>, <a href="generator_mathrng.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
             
@@ -539,6 +533,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#arrayEntry">Generator#arrayEntry</a>
+    </li></ul></dd>
     
 
     
@@ -627,6 +626,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#bool">Generator#bool</a>
+    </li></ul></dd>
     
 
     
@@ -783,6 +787,11 @@
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#character">Generator#character</a>
+    </li></ul></dd>
+    
 
     
 
@@ -919,6 +928,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#fixBits">Generator#fixBits</a>
+    </li></ul></dd>
     
 
     
@@ -1096,6 +1110,11 @@
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#fixSeed">Generator#fixSeed</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1201,6 +1220,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#number">Generator#number</a>
+    </li></ul></dd>
     
 
     
@@ -1384,6 +1408,11 @@
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#numberBetween">Generator#numberBetween</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1468,7 +1497,7 @@
 
 
 <div class="description">
-    Returns a random number.
+    Generates a random number by using Math.random and adjusting it.
 </div>
 
 
@@ -1492,6 +1521,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Generator.html#random">Generator#random</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1512,7 +1546,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line196">line 196</a>
+        <a href="generator_mathrng.js.html">generator/mathrng.js</a>, <a href="generator_mathrng.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -1540,10 +1574,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    - A random number based on this.generator
-</div>
-
 
 
 <dl>
@@ -1656,6 +1686,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#randSeed">Generator#randSeed</a>
+    </li></ul></dd>
     
 
     
@@ -1811,6 +1846,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#reverseBits">Generator#reverseBits</a>
+    </li></ul></dd>
     
 
     
@@ -1987,6 +2027,11 @@
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#splitSeed">Generator#splitSeed</a>
+    </li></ul></dd>
+    
 
     
 
@@ -2150,6 +2195,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#toBigInt">Generator#toBigInt</a>
+    </li></ul></dd>
     
 
     

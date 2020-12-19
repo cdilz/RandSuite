@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: deck/standardWithJoker.js</title>
+    <title>JSDoc: Source: generator/mathrng.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: deck/standardWithJoker.js</h1>
+    <h1 class="page-title">Source: generator/mathrng.js</h1>
 
     
 
@@ -28,32 +28,53 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict'
 
-import Card from './base/card.js'
-import Standard from './base/deck.js'
+import Generator from './base/generator.js'
 
 /**
- * Class representing a standard deck of playing cards with Jokers added in.
+ * Class representing a random number generator that uses the built in Math.random().
  * 
- * @extends Standard
- * 
- * @param {Generator} generator - Random number generator to use with the deck.
+ * @extends Generator
  * 
  * @inheritdoc
  */
-class StandardWithJoker extends Standard
+class MathRNG extends Generator
 {
-	constructor(randSuite)
+	/**
+	 * 'Adjusts' a floating point by removing non-decimal characters.
+	 * 
+	 * @param {Number} value - The number to be 'adjusted'
+	 */
+	adjust(value)
 	{
-		super(randSuite)
+		let stringVal = value.toString()
+		// Remove non-digit characters.
+		let output = BigInt(stringVal.replaceAll(/[\D]/g, ''))
+		if(exponentIndex > -1)
+		{
+			output = output.slice(0, exponentIndex)
+		}
+		return BigInt(output)
+	}
 
-		this.addCard(new Card('Red', 'Joker', 'Trump'))
-		this.addCard(new Card('Black', 'Joker', 'Trump'))
+	/**
+	 * Generates a random number by using Math.random and adjusting it.
+	 * 
+	 * @returns {BigInt}
+	 */
+	random()
+	{
+		let rand = this.adjust(Math.random())
+		//rand = rand ** this.bits
+		while(rand &lt; (this.max + 1n))
+		{
+			rand += rand
+		}
 
-		this.freshDeck = this.deck
+		return this.fixBits(rand) //rand % (this.max + 1n)
 	}
 }
 
-export default StandardWithJoker</code></pre>
+export default MathRNG</code></pre>
         </article>
     </section>
 
