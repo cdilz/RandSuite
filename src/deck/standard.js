@@ -3,11 +3,18 @@
 import Deck from './base/deck.js'
 import Card from './base/card.js'
 
+/**
+ * Class representing a standard deck of playing cards.
+ * 
+ * @extends Deck
+ * 
+ * @param {Generator} generator - Random number generator to use with the deck.
+ */
 class Standard extends Deck
 {
-	constructor(randSuite)
+	constructor(generator)
 	{
-		super(randSuite)
+		super(generator)
 		let suits = 
 		[
 			{name: 'Spades', color: 'Black'},
