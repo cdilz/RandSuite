@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: deck/standard.js</title>
+    <title>JSDoc: Source: generator/xorshift/xorShiftStar.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: deck/standard.js</h1>
+    <h1 class="page-title">Source: generator/xorshift/xorShiftStar.js</h1>
 
     
 
@@ -28,46 +28,39 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict'
 
-import Deck from './base/deck.js'
-import Card from './base/card.js'
+throw 'Not Yet Implemented'
+
+import XorBase from '../base/xorBase.js'
 
 /**
- * Class representing a standard deck of playing cards.
+ * NON-FUNCTIONAL
  * 
- * @extends Deck
+ * Class representing the XORShift* random number generator.
  * 
- * @param {Generator} generator - Random number generator to use with the deck.
+ * @extends XorBase
  * 
  * @inheritdoc
  */
-class Standard extends Deck
+class XORShiftStar extends XorBase
 {
-	constructor(generator)
+
+	/**
+	 * Uses XOR and bit shifts to generate a pseudorandom number.
+	 * 
+	 * @returns {BigInt}
+	 */
+	random()
 	{
-		super(generator)
-		let suits = 
-		[
-			{name: 'Spades', color: 'Black'},
-			{name: 'Diamonds', color: 'Red'},
-			{name: 'Clubs', color: 'Black'},
-			{name: 'Hearts', color: 'Red'}
-		]
-
-		let faces = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
-
-		for(let i = 0; i &lt; suits.length; i++)
-		{
-			for(let j = 0; j &lt; faces.length; j++)
-			{
-				this.addCard(new Card(suits[i].color, faces[j], suits[i].name))
-			}
-		}
-
-		this.freshDeck = this.deck
+		let x = this.state[0]
+		x = this.fixBits(x ^ this.fixBits(x >> this.triple[0]))
+		x = this.fixBits(x ^ this.fixBits(x &lt;&lt; this.triple[1]))
+		x = this.fixBits(x ^ this.fixBits(x >> this.triple[2]))
+		this.state[0] = x
+		return this.fixBits(x * this.fixBits(BigInt(0x2545F4914F6CDD1D)))
 	}
 }
 
-export default Standard</code></pre>
+export default XORShiftStar</code></pre>
         </article>
     </section>
 
