@@ -1,7 +1,18 @@
 'use strict'
 
+throw 'Not Yet Implemented'
+
 import XorBase from '../base/xorBase.js'
 
+/**
+ * NON-FUNCTIONAL
+ * 
+ * Class representing the XORWow random number generator.
+ * 
+ * @extends XorBase
+ * 
+ * @inheritdoc
+ */
 class XORWow extends XorBase
 {
 	constructor(args)
@@ -11,6 +22,11 @@ class XORWow extends XorBase
 		this.state = this.splitSeed(6)
 	}
 
+	/**
+	 * Uses XOR and bit shifts to generate a pseudorandom number.
+	 * 
+	 * @returns {BigInt}
+	 */
 	random()
 	{
 		let x = this.state[4]
