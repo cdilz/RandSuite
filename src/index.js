@@ -1,20 +1,30 @@
 'use strict'
 
-import XORShift from './generator/xorshift.js'
+import list from './generator/list.js'
 /** 
  * Class representing a suite of random number generation needs
  */
 class RandSuite
 {
 	/**
+	 * Object containing all built-in random number generators.
+	 * 
+	 * @returns {Object}
+	 */
+	static get list()
+	{
+		return list
+	}
+
+	/**
 	 * Creates a suite of random number generation needs
-	 * @param {Generator} [generator=XORWow] - a random number generator based off of the Generator class
+	 * @param {Generator} [generator=CryptoRNG] - a random number generator based off of the Generator class
 	 */
 	constructor(generator)
 	{
 		if(typeof generator === typeof undefined)
 		{
-			generator = new XORShift(XORShift.styles.XORWOW)
+			generator = new list(RandSquite.list.CRYPTO)
 		}	
 		
 		this.generator = generator

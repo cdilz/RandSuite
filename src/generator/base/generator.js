@@ -5,7 +5,7 @@ import crypto from 'crypto'
 /**
  * Represents a random number generator. To be used as a superclass only.
  *  
- * @param {Object} args - Contains the number of bits for the generator and the seed.
+ * @param {Object} [args] - Contains the number of bits for the generator and the seed.
  * @param {Number} [args.bits=128] - The maximal number of bits the random number can be.
  * @param {BigInt|Number|String|Buffer} [args.seed] - The seed for the random number generator. (May be ignored)
  */
@@ -28,6 +28,15 @@ class Generator
 
 	constructor(args)
 	{
+		if(typeof args == typeof undefined)
+		{
+			args = 
+			{
+				bits: 128,
+				seed: 0n
+			}
+		}
+
 		if(typeof args.bits != typeof 0)
 		{
 			args.bits = 128

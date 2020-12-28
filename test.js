@@ -1,9 +1,6 @@
 'use strict'
 
-import XORShift from './generator/xorshift.js'
-import MathRNG from './generator/mathrng.js'
-import CryptoRNG from './generator/crypto.js'
-import RandSuite from './index.js'
+import RandSuite from './src/index.js'
 
 
 function getMedian(inputArr)
@@ -193,17 +190,8 @@ let args =
 	,bits: 6
 }
 
-let generators =
-{
-	 wow: new XORShift.XORWOW(args)
-	,plus: new XORShift.XORSHIFTPLUS(args)
-	,star: new XORShift.XORSHIFTSTAR(args)
-	,weird: new XORShift.XORWEIRD(args)
-	,math: new MathRNG(args)
-	,crypto: new CryptoRNG(args)
-}
-
-let rnd = new RandSuite(generators.wow)
+let gen = new RandSuite.list.CRYPTO(args)
+let rnd = new RandSuite(gen)
 
 let absoluteMin = 0n
 let absoluteMax = rnd.generator.max
@@ -212,7 +200,7 @@ function random()
 	return rnd.numberBetween(absoluteMin, absoluteMax)
 }
 
-//statistics()
+statistics()
 countEntries()
 
 //console.log(rnd.generator.randSeed())

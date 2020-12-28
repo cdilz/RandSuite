@@ -1,10 +1,94 @@
 'use strict'
 
+function makeMatrix(bits)
+{
+	let matrix = []
+	for(let i = 0; i < bits; i++)
+	{
+		matrix.push('0'.repeat(bits).split(''))
+	}
+	let x = 0
+	let y = 1
+
+	//console.log(matrix)
+
+	while(true)
+	{
+		matrix[y][x] = '1'
+		x++
+		y++
+
+		if(y >= bits){break}
+	}
+
+	for(let i = 0; i < matrix.length; i++)
+	{
+		matrix[i] = BigInt('0b' + matrix[i].join(''))
+	}
+
+	console.log(matrix)
+}
+
+makeMatrix(32)
+
+
+
+
+
+
+
+
+
+/*
+	n is bit size
+
+	y is binary vector
+
+	L is all 0's except for 1's on the principal subdiagonal. That is to say: the first diagonal under the one that starts at [0,0] and ends aqt [n,n]
+
+	T = I + L^a
+
+
+import {create, all} from 'mathjs'
+
+const math = create(all, config)
+
+const config = {}
+// Makes L
+function makeMatrix(bits)
+{
+	let output = math.zeros(bits, bits)
+
+	let x = 0
+	let y = 1
+
+	while(true)
+	{
+		output.subset(math.index(y, x), 1)
+		x++
+		y++
+		if(y >= bits) {break;}
+	}
+
+	console.log(output.toString())
+}
+
+makeMatrix(4)
+*/
+
+
+
+
+
+
+
+
+
+/*
 import crypto from 'crypto'
 
 console.log(crypto.randomInt((2**48) - 1))
 
-/*
 
 let a = crypto.randomBytes(64)
 

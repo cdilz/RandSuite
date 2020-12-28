@@ -21,10 +21,6 @@ class MathRNG extends Generator
 		let stringVal = value.toString()
 		// Remove non-digit characters.
 		let output = BigInt(stringVal.replaceAll(/[\D]/g, ''))
-		if(exponentIndex > -1)
-		{
-			output = output.slice(0, exponentIndex)
-		}
 		return BigInt(output)
 	}
 
