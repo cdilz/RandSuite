@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: deck/standard.js</title>
+    <title>JSDoc: Source: array/array.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: deck/standard.js</h1>
+    <h1 class="page-title">Source: array/array.js</h1>
 
     
 
@@ -28,46 +28,93 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict'
 
-import Deck from './base/deck.js'
-import Card from './base/card.js'
-
 /**
- * Class representing a standard deck of playing cards.
+ * Class representing a normal array.
  * 
- * @extends Deck
- * 
- * @param {Generator} generator - Random number generator to use with the deck.
- * 
- * @inheritdoc
+ * @param {Generator} generator - The random number generator to use with the array.
  */
-class Standard extends Deck
+class ArrayRNG
 {
 	constructor(generator)
 	{
-		super(generator)
-		let suits = 
-		[
-			{name: 'Spades', color: 'Black'},
-			{name: 'Diamonds', color: 'Red'},
-			{name: 'Clubs', color: 'Black'},
-			{name: 'Hearts', color: 'Red'}
-		]
+		this.generator = generator
+		this.array = []
+	}
+	
+	/**
+	 * Empty the internal array
+	 */
+	empty()
+	{
+		this.array = []
+	}
 
-		let faces = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+	/**
+	 * Adds a value to the array.
+	 * 
+	 * @param {any} value - Value to add to the array.
+	 */
+	push(value)
+	{
+		this.array.push(value)
+	}
 
-		for(let i = 0; i &lt; suits.length; i++)
-		{
-			for(let j = 0; j &lt; faces.length; j++)
-			{
-				this.addCard(new Card(suits[i].color, faces[j], suits[i].name))
-			}
-		}
+	/**
+	 * Removes value from the end of an array and returns the value.
+	 * 
+	 * @returns {any} - Last value added to the array.
+	 */
+	pop()
+	{
+		return this.array.pop()
+	}
 
-		this.freshDeck = this.deck
+	/**
+	 * Replace the value at index with new value.
+	 * 
+	 * @param {Number} index - 
+	 * @param {any} value 
+	 */
+	replace(index, value)
+	{
+		this.array[index] = value
+	}
+
+	/**
+	 * Retrieves value at specific index
+	 * 
+	 * @param {Number} [index=this.array.length - 1] - Location of data to get
+	 * 
+	 * @returns {any}
+	 */
+	peek(index=this.array.length - 1)
+	{
+		return this.array[index]
+	}
+
+	/**
+	 * Replace the internal array with a completely new one.
+	 * 
+	 * @param {Array} array - Array to replace the internal one with.
+	 */
+	replaceArray(array)
+	{
+		this.array = array
+	}
+
+	/**
+	 * Randomly pick an entry from the array.
+	 * 
+	 * @return {any}
+	 */
+	random()
+	{
+		let index = this.generator.numberBetween(0, this.array.length - 1)
+		return array[index]
 	}
 }
 
-export default Standard</code></pre>
+export default ArrayRNG</code></pre>
         </article>
     </section>
 

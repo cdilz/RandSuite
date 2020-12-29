@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run": "node ./src/index.js",
-    "doc": "jsdoc src -r -d docs"
+    "doc": "rmdir /S/Q docs & jsdoc src -r -d docs"
   },
   "author": "Charles DiLaurenzio",
   "license": "Apache 2.0",
