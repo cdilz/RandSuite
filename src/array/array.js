@@ -24,7 +24,7 @@ class ArrayRNG
 	/**
 	 * Adds a value to the array.
 	 * 
-	 * @param {any} value - Value to add to the array.
+	 * @param {*} value - Value to add to the array.
 	 */
 	push(value)
 	{
@@ -34,7 +34,7 @@ class ArrayRNG
 	/**
 	 * Removes value from the end of an array and returns the value.
 	 * 
-	 * @returns {any} - Last value added to the array.
+	 * @returns {*} - Last value added to the array.
 	 */
 	pop()
 	{
@@ -45,7 +45,7 @@ class ArrayRNG
 	 * Replace the value at index with new value.
 	 * 
 	 * @param {Number} index - 
-	 * @param {any} value 
+	 * @param {*} value 
 	 */
 	replace(index, value)
 	{
@@ -57,7 +57,7 @@ class ArrayRNG
 	 * 
 	 * @param {Number} [index=this.array.length - 1] - Location of data to get
 	 * 
-	 * @returns {any}
+	 * @returns {*}
 	 */
 	peek(index=this.array.length - 1)
 	{
@@ -77,12 +77,12 @@ class ArrayRNG
 	/**
 	 * Randomly pick an entry from the array.
 	 * 
-	 * @return {any}
+	 * @return {*}
 	 */
 	random()
 	{
 		let index = this.generator.numberBetween(0, this.array.length - 1)
-		return array[index]
+		return this.array[index]
 	}
 }
 

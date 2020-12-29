@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: deck/standardWithJoker.js</title>
+    <title>JSDoc: Source: array/loadedArray.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: deck/standardWithJoker.js</h1>
+    <h1 class="page-title">Source: array/loadedArray.js</h1>
 
     
 
@@ -28,32 +28,83 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict'
 
-import Card from './base/card.js'
-import Standard from './base/deck.js'
+import ArrayRNG from './array.js'
 
 /**
- * Class representing a standard deck of playing cards with Jokers added in.
+ * Class representing a loaded array. That is to say the array has a non-equal chance of an item being selected.
  * 
- * @extends Standard
- * 
- * @param {Generator} generator - Random number generator to use with the deck.
+ * @extends ArrayRNG
  * 
  * @inheritdoc
  */
-class StandardWithJoker extends Standard
+class LoadedArray extends ArrayRNG
 {
-	constructor(randSuite)
+	/**
+	 * Adds a weighted value to the array.
+	 * 
+	 * @param {BigInt} weight 
+	 * @param {*} value 
+	 */
+	push(value, weight)
 	{
-		super(randSuite)
+		this.array.push({weight, value})
+	}
 
-		this.addCard(new Card('Red', 'Joker', 'Trump'))
-		this.addCard(new Card('Black', 'Joker', 'Trump'))
+	/**
+	 * Replace the value and weight at index with the new value and weight.
+	 * 
+	 * @param {Number} index 
+	 * @param {*} value 
+	 * @param {BigInt} weight 
+	 */
+	replace(index, value, weight)
+	{
+		this.array[index] = {weight, value}
+	}
 
-		this.freshDeck = this.deck
+	random()
+	{
+		try 
+		{
+			let min = 0
+			let max = 0
+			let weightedArray = []
+	
+			for(let i = 0; i &lt; this.array.length; i++)
+			{
+				let entry = this.array[i]
+				max = entry.weight
+				let option = 
+				{
+					min,
+					max,
+					value: entry.value
+				}
+				weightedArray.push(option)
+				min = entry.weight + 1
+			}
+			
+			let chance = this.generator.randomBetween(0, max)
+	
+			for(let i = 0; i &lt; weightedArray.length; i++)
+			{
+				let entry = weightedArray[i]
+				if(chance >= entry.min &amp;&amp; chance &lt;= entry.max)
+				{
+					return entry.value
+				}
+			}
+	
+			return undefined
+		} 
+		catch (e) 
+		{
+			throw e
+		}
 	}
 }
 
-export default StandardWithJoker</code></pre>
+export default LoadedArray</code></pre>
         </article>
     </section>
 

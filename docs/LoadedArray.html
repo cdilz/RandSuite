@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: ArrayRNG</title>
+    <title>JSDoc: Class: LoadedArray</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: ArrayRNG</h1>
+    <h1 class="page-title">Class: LoadedArray</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArrayRNG<span class="signature">(generator)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>LoadedArray<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a normal array.</div>
+            <div class="class-description">Class representing a loaded array. That is to say the array has a non-equal chance of an item being selected.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="ArrayRNG"><span class="type-signature"></span>new ArrayRNG<span class="signature">(generator)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="LoadedArray"><span class="type-signature"></span>new LoadedArray<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -58,55 +58,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>generator</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Generator.html">Generator</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The random number generator to use with the array.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -142,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="array_array.js.html">array/array.js</a>, <a href="array_array.js.html#line8">line 8</a>
+        <a href="array_loadedArray.js.html">array/loadedArray.js</a>, <a href="array_loadedArray.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -174,6 +125,17 @@
 
     
     </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="ArrayRNG.html">ArrayRNG</a></li>
+    </ul>
+
 
     
 
@@ -227,6 +189,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArrayRNG.html#empty">ArrayRNG#empty</a>
+    </li></ul></dd>
     
 
     
@@ -385,6 +352,11 @@
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArrayRNG.html#peek">ArrayRNG#peek</a>
+    </li></ul></dd>
+    
 
     
 
@@ -491,6 +463,11 @@
     
 
     
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArrayRNG.html#pop">ArrayRNG#pop</a>
+    </li></ul></dd>
+    
 
     
 
@@ -571,7 +548,7 @@
     
 
     
-    <h4 class="name" id="push"><span class="type-signature"></span>push<span class="signature">(value)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="push"><span class="type-signature"></span>push<span class="signature">(weight, value)</span><span class="type-signature"></span></h4>
     
 
     
@@ -579,7 +556,7 @@
 
 
 <div class="description">
-    Adds a value to the array.
+    Adds a weighted value to the array.
 </div>
 
 
@@ -615,6 +592,29 @@
 
         <tr>
             
+                <td class="name"><code>weight</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>value</code></td>
             
 
@@ -631,7 +631,7 @@
 
             
 
-            <td class="description last">Value to add to the array.</td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -651,6 +651,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArrayRNG.html#push">ArrayRNG#push</a>
+    </li></ul></dd>
     
 
     
@@ -672,7 +677,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="array_array.js.html">array/array.js</a>, <a href="array_array.js.html#line29">line 29</a>
+        <a href="array_loadedArray.js.html">array/loadedArray.js</a>, <a href="array_loadedArray.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -739,6 +744,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArrayRNG.html#random">ArrayRNG#random</a>
+    </li></ul></dd>
     
 
     
@@ -814,7 +824,7 @@
     
 
     
-    <h4 class="name" id="replace"><span class="type-signature"></span>replace<span class="signature">(index, value)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="replace"><span class="type-signature"></span>replace<span class="signature">(index, value, weight)</span><span class="type-signature"></span></h4>
     
 
     
@@ -822,7 +832,7 @@
 
 
 <div class="description">
-    Replace the value at index with new value.
+    Replace the value and weight at index with the new value and weight.
 </div>
 
 
@@ -874,7 +884,7 @@
 
             
 
-            <td class="description last">-</td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -888,6 +898,29 @@
             
                 
 <span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>weight</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
 
 
             
@@ -918,6 +951,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArrayRNG.html#replace">ArrayRNG#replace</a>
+    </li></ul></dd>
+    
 
     
 
@@ -938,7 +976,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="array_array.js.html">array/array.js</a>, <a href="array_array.js.html#line50">line 50</a>
+        <a href="array_loadedArray.js.html">array/loadedArray.js</a>, <a href="array_loadedArray.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -1052,6 +1090,11 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArrayRNG.html#replaceArray">ArrayRNG#replaceArray</a>
+    </li></ul></dd>
     
 
     
