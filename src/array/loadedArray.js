@@ -19,6 +19,8 @@ class LoadedArray extends ArrayRNG
 	 */
 	push(value, weight)
 	{
+		weight = this.generator.toBigInt(weight)
+
 		this.array.push({weight, value})
 	}
 
@@ -38,8 +40,8 @@ class LoadedArray extends ArrayRNG
 	{
 		try 
 		{
-			let min = 0
-			let max = 0
+			let min = 0n
+			let max = 0n
 			let weightedArray = []
 	
 			for(let i = 0; i < this.array.length; i++)
@@ -53,7 +55,7 @@ class LoadedArray extends ArrayRNG
 					value: entry.value
 				}
 				weightedArray.push(option)
-				min = max + 1
+				min = max + 1n
 			}
 			
 			let chance = this.generator.numberBetween(0, max)

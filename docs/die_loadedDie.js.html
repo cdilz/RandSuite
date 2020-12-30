@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: generator/xorshift/xorWow.js</title>
+    <title>JSDoc: Source: die/loadedDie.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: generator/xorshift/xorWow.js</h1>
+    <h1 class="page-title">Source: die/loadedDie.js</h1>
 
     
 
@@ -26,56 +26,52 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>'use strict'
+            <pre class="prettyprint source linenums"><code>'use static'
 
-throw 'Not Yet Implemented'
-
-import XorBase from '../base/xorBase.js'
+import LoadedArray from '../array/loadedArray.js'
+import Die from './die.js'
 
 /**
- * NON-FUNCTIONAL
+ * Class representing a numbered game die. Uses {@link loadedArray}
  * 
- * Class representing the XORWow random number generator.
- * 
- * @extends XorBase
- * 
+ * @extends Die
  * @inheritdoc
  */
-class XORWow extends XorBase
+class loadedDie extends Die
 {
-	constructor(args)
+	constructor(generator)
 	{
-		super(args)
-
-		this.state = this.splitSeed(6)
+		super(generator)
+		this.sides = 0n
+		this.weights = new LoadedArray(generator)
 	}
 
 	/**
-	 * Uses XOR and bit shifts to generate a pseudorandom number.
+	 * Adds a new side to the die.
 	 * 
-	 * @returns {BigInt}
+	 * @param {BigInt} weight - The weight of the new side (how often it'll show up relative to other sides)
 	 */
-	random()
+	addSide(weight)
 	{
-		let x = this.state[4]
-		let y = this.state[0]
+		this.sides++
 
-		this.state[4] = this.state[3]
-		this.state[3] = this.state[2]
-		this.state[2] = this.state[1]
-		this.state[1] = this.state[0]
+		this.weights.push(this.sides, weight)
+	}
 
-		x = this.fixBits(x ^ this.fixBits(x >> this.triple[0]))
-		x = this.fixBits(x ^ this.fixBits(x &lt;&lt; this.triple[1]))
-		x = this.fixBits(x ^ this.fixBits(y ^ this.fixBits(y &lt;&lt; this.triple[2])))
-
-		this.state[0] = x
-		this.state[5] = this.fixBits(this.state[5] + this.fixBits(362437n))
-		return this.fixBits(x + this.state[5])
+	roll()
+	{
+		try
+		{
+			return this.weights.random()
+		}
+		catch(e)
+		{
+			throw e
+		}
 	}
 }
 
-export default XORWow</code></pre>
+export default loadedDie</code></pre>
         </article>
     </section>
 

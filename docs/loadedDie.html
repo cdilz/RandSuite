@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Die</title>
+    <title>JSDoc: Class: loadedDie</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Die</h1>
+    <h1 class="page-title">Class: loadedDie</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Die<span class="signature">(generator, sides<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>loadedDie<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing a numbered game die.</div>
+            <div class="class-description">Class representing a numbered game die. Uses loadedArray</div>
         
     
 </header>
@@ -45,12 +45,131 @@
     
 
     
-    <h4 class="name" id="Die"><span class="type-signature"></span>new Die<span class="signature">(generator, sides<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="loadedDie"><span class="type-signature"></span>new loadedDie<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="die_loadedDie.js.html">die/loadedDie.js</a>, <a href="die_loadedDie.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Die.html">Die</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addSide"><span class="type-signature"></span>addSide<span class="signature">(weight)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Adds a new side to the die.
+</div>
 
 
 
@@ -73,11 +192,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -89,42 +204,7 @@
 
         <tr>
             
-                <td class="name"><code>generator</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Generator.html">Generator</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last">Random number generator used to roll the die.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>sides</code></td>
+                <td class="name"><code>weight</code></td>
             
 
             <td class="type">
@@ -137,26 +217,10 @@
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                    6
-                
-                </td>
-            
 
-            <td class="description last">The number of sides the die has, defaults to 6.</td>
+            <td class="description last">The weight of the new side (how often it'll show up relative to other sides)</td>
         </tr>
 
     
@@ -197,7 +261,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="die_die.js.html">die/die.js</a>, <a href="die_die.js.html#line9">line 9</a>
+        <a href="die_loadedDie.js.html">die/loadedDie.js</a>, <a href="die_loadedDie.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -226,26 +290,6 @@
 
 
 
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
 
         
             
@@ -284,6 +328,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Die.html#roll">Die#roll</a>
+    </li></ul></dd>
     
 
     
@@ -452,6 +501,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Die.html#rollAdd">Die#rollAdd</a>
+    </li></ul></dd>
+    
 
     
 
@@ -619,6 +673,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Die.html#rollArray">Die#rollArray</a>
+    </li></ul></dd>
+    
 
     
 
@@ -785,6 +844,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Die.html#rollMultiply">Die#rollMultiply</a>
+    </li></ul></dd>
     
 
     
