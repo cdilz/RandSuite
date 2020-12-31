@@ -320,148 +320,6 @@ Class representing the XORShift* random number generator.</div>
     
 
     
-    <h4 class="name" id="arrayEntry"><span class="type-signature"></span>arrayEntry<span class="signature">(array)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Selects an entry from an array at random.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>array</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Generator.html#arrayEntry">Generator#arrayEntry</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line289">line 289</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id="bool"><span class="type-signature"></span>bool<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
     
 
@@ -519,7 +377,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line278">line 278</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line279">line 279</a>
     </li></ul></dd>
     
 
@@ -679,7 +537,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line300">line 300</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line290">line 290</a>
     </li></ul></dd>
     
 
@@ -715,7 +573,7 @@ Class representing the XORShift* random number generator.</div>
     
 
     
-    <h4 class="name" id="fixBits"><span class="type-signature"></span>fixBits<span class="signature">(value)</span><span class="type-signature"> &rarr; {BigInt}</span></h4>
+    <h4 class="name" id="fixBits"><span class="type-signature"></span>fixBits<span class="signature">(value, bits<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {BigInt}</span></h4>
     
 
     
@@ -747,7 +605,11 @@ Class representing the XORShift* random number generator.</div>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -772,10 +634,61 @@ Class representing the XORShift* random number generator.</div>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">Value to be coerced into this.bits of data.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bits</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this.bits
+                
+                </td>
+            
+
+            <td class="description last">Bit length to convert to.</td>
         </tr>
 
     
@@ -821,7 +734,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line127">line 127</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line128">line 128</a>
     </li></ul></dd>
     
 
@@ -1056,6 +969,160 @@ Class representing the XORShift* random number generator.</div>
     
 
     
+    <h4 class="name" id="float"><span class="type-signature"></span>float<span class="signature">(precision<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Outputs a random floating point number between 0 (inclusive) and 1 (exclusive) with optional precision.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>precision</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">How many digits to keep after decimal point.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#float">Generator#float</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line300">line 300</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="number"><span class="type-signature"></span>number<span class="signature">()</span><span class="type-signature"> &rarr; {BigInt}</span></h4>
     
 
@@ -1113,7 +1180,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line216">line 216</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line217">line 217</a>
     </li></ul></dd>
     
 
@@ -1300,7 +1367,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line229">line 229</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line230">line 230</a>
     </li></ul></dd>
     
 
@@ -1739,7 +1806,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line184">line 184</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line185">line 185</a>
     </li></ul></dd>
     
 
@@ -2088,7 +2155,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line139">line 139</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line140">line 140</a>
     </li></ul></dd>
     
 
@@ -2158,7 +2225,7 @@ Class representing the XORShift* random number generator.</div>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Dec 30 2020 10:42:48 GMT-0500 (GMT-05:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Thu Dec 31 2020 14:03:59 GMT-0500 (GMT-05:00)
 </footer>
 
 <script> prettyPrint(); </script>

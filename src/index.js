@@ -127,11 +127,6 @@ class RandSuite
 	{
 		return this.generator.bool()
 	}
-	/*
-		TODO:
-			- Loaded dice
-			- Loaded array/object
-	*/
 }
 
 export default RandSuite

@@ -1,5 +1,15 @@
 'use strict'
 
+import CryptoRNG from "../src/generator/crypto.js"
+
+let a = new CryptoRNG()
+
+console.log(a.float())
+console.log(a.float(3))
+
+
+
+/*
 function makeMatrix(bits)
 {
 	let matrix = []
@@ -30,7 +40,7 @@ function makeMatrix(bits)
 }
 
 makeMatrix(32)
-
+*/
 
 
 

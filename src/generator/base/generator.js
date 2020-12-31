@@ -121,12 +121,13 @@ class Generator
 	 * Ensures the value is this.bits in size.
 	 * 
 	 * @param {BigInt} value - Value to be coerced into this.bits of data.
+	 * @param {Number} [bits=this.bits] - Bit length to convert to.
 	 * 
 	 * @returns {BigInt} 
 	 */
-	fixBits(value)
+	fixBits(value, bits = this.bits)
 	{
-		return BigInt.asUintN(this.bits, value)
+		return BigInt.asUintN(bits, value)
 	}
 
 	/**
@@ -280,18 +281,7 @@ class Generator
 		let rand = this.numberBetween(0, 1)
 		return !!rand
 	}
-
-	/**
-	 * Selects an entry from an array at random.
-	 * 
-	 * @param {*} array 
-	 */
-	arrayEntry(array)
-	{
-		let index = this.numberBetween(0, array.length - 1)
-		return array[index]
-	}
-
+	
 	/**
 	 * Selects a random character from a string
 	 * 
@@ -300,6 +290,24 @@ class Generator
 	character(string)
 	{
 		return this.arrayEntry(string)
+	}
+
+	/**
+	 * Outputs a random floating point number between 0 (inclusive) and 1 (exclusive) with optional precision.
+	 * 
+	 * @param {Number} [precision] - How many digits to keep after decimal point.
+	 */
+	float(precision)
+	{
+		let output = this.random().toString()
+
+		if(typeof precision != typeof undefined)
+		{
+			output = output.substr(0, precision)
+		}
+
+		output = '0.' + output
+		return Number(output)
 	}
 }
 
