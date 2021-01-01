@@ -1,6 +1,6 @@
 'use strict'
 
-import CryptoRNG from "../src/generator/crypto.js"
+import CryptoRNG from "../src/generator/cryptorng.js"
 
 let a = new CryptoRNG()
 

@@ -1,6 +1,44 @@
 'use strict'
 
+import Generator from './generator/base/generator.js'
+import CryptoRNG from './generator/cryptorng.js'
+import MAthRNG from './generator/mathrng.js'
+
+let generators =
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import list from './generator/list.js'
+
+
+
+
+
+
+
+
+
+
+
+
+
 /** 
  * Class representing a suite of random number generation needs
  */

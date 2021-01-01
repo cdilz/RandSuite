@@ -1,6 +1,6 @@
 'use strict'
 
-import CryptoRNG from '../../src/generator/crypto.js'
+import CryptoRNG from '../../src/generator/cryptorng.js'
 import Coin from '../../src/coin/coin.js'
 
 

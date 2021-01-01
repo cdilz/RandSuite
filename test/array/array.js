@@ -1,6 +1,6 @@
 'use strict'
 
-import CryptoRNG from '../../src/generator/crypto.js'
+import CryptoRNG from '../../src/generator/cryptorng.js'
 import ArrayRNG from '../../src/array/array.js'
 
 let testArray = [1,2,3,4]

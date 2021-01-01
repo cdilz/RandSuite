@@ -1,7 +1,7 @@
 'use strict'
 
 import GENERATOR from './base/generator.js'
-import CRYPTO from './crypto.js'
+import CRYPTO from './cryptorng.js'
 import MATH from './mathrng.js'
 
 let GenList = 

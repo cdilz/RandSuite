@@ -1,6 +1,6 @@
 'use strict'
 
-import CryptoRNG from '../../src/generator/crypto.js'
+import CryptoRNG from '../../src/generator/cryptorng.js'
 import LoadedDie from '../../src/die/loadedDie.js'
 
 let generator = new CryptoRNG({bits: 16})
