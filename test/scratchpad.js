@@ -1,13 +1,26 @@
 'use strict'
 
+import rng from "../src/index.js"
+
+console.log(rng.test)
+
+
+
+
+
+
+
+
+
+
+/*
 import CryptoRNG from "../src/generator/cryptorng.js"
 
 let a = new CryptoRNG()
 
 console.log(a.float())
 console.log(a.float(3))
-
-
+*/
 
 /*
 function makeMatrix(bits)
