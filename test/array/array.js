@@ -1,11 +1,14 @@
 'use strict'
 
-import CryptoRNG from '../../src/generator/cryptorng.js'
-import ArrayRNG from '../../src/array/array.js'
+import rng from '../../src/index.js'
+
+let Gen = rng.GENERATOR.CRYPTO
+let ArrayRNG = rng.ARRAY.BASE
+
 
 let testArray = [1,2,3,4]
 
-let gen = new CryptoRNG({bits:16})
+let gen = new Gen({bits:16})
 let arng = new ArrayRNG(gen)
 
 arng.push('a')
@@ -14,20 +17,19 @@ arng.push('c')
 arng.push('d')
 arng.push('e')
 
-console.log(arng.array)
-console.log(arng.peek() == 'e')
-console.log(arng.pop() == 'e')
-console.log(arng.peek() == 'd')
+console.log(`Peek 'e': ${arng.peek() == 'e'}`)
+console.log(`Pop 'e': ${arng.pop() == 'e'}`)
+console.log(`Peek 'd': ${arng.peek() == 'd'}`)
 
 arng.replace(1, 'car')
-console.log(arng.peek(1) == 'car')
+console.log(`Replace Peek 'car': ${arng.peek(1) == 'car'}`)
 
 arng.empty()
-console.log(arng.array.length == 0)
+console.log(`Array Empty: ${arng.array.length == 0}`)
 
 arng.replaceArray(testArray)
 
-console.log(arng.peek() == 4)
+console.log(`Replace Array Peek 4: ${arng.peek() == 4}`)
 
 let results = 
 {
@@ -41,4 +43,4 @@ for(let i = 0; i < runs; i++)
 {
 	results[arng.random()]++
 }
-console.log(results)
+console.log(`Random Results: ${JSON.stringify(results)}`)

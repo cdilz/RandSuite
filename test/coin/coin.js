@@ -1,11 +1,13 @@
 'use strict'
 
-import CryptoRNG from '../../src/generator/cryptorng.js'
-import Coin from '../../src/coin/coin.js'
+import rng from '../../src/index.js'
+
+let Gen = rng.GENERATOR.CRYPTO
+let Coin = rng.COIN.BASE
 
 
 
-let generator = new CryptoRNG({bits:1})
+let generator = new Gen({bits:1})
 let coinStan = new Coin(generator, Coin.outputTypes.STANDARD)
 let coinTech = new Coin(generator, Coin.outputTypes.TECHNICAL)
 let coinNum = new Coin(generator, Coin.outputTypes.NUMERIC)
@@ -39,7 +41,7 @@ function test(coin)
 	return output
 }
 
-console.log(test(coinStan))
-console.log(test(coinTech))
-console.log(test(coinNum))
-console.log(test(coinBool))
+console.log(`Random Standard Coins: ${JSON.stringify(test(coinStan))}`)
+console.log(`Random Technical Coins: ${JSON.stringify(test(coinTech))}`)
+console.log(`Random Numeric Coins: ${JSON.stringify(test(coinNum))}`)
+console.log(`Random Boolean Coints: ${JSON.stringify(test(coinBool))}`)

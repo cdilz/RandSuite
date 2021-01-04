@@ -47,7 +47,7 @@ class LoadedArray extends ArrayRNG
 			for(let i = 0; i < this.array.length; i++)
 			{
 				let entry = this.array[i]
-				max += entry.weight
+				max += this.generator.toBigInt(entry.weight)
 				let option = 
 				{
 					min,

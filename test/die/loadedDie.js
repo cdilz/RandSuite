@@ -1,9 +1,11 @@
 'use strict'
 
-import CryptoRNG from '../../src/generator/cryptorng.js'
-import LoadedDie from '../../src/die/loadedDie.js'
+import rng from '../../src/index.js'
 
-let generator = new CryptoRNG({bits: 16})
+let Gen = rng.GENERATOR.CRYPTO
+let LoadedDie = rng.DIE.LOADED
+
+let generator = new Gen({bits: 16})
 let die = new LoadedDie(generator, 1327)
 
 die.addSide(12)
@@ -19,7 +21,7 @@ let results = {}
 
 for(let i = 0n; i < die.sides; i++)
 {
-	results[i+1n] = 0n
+	results[i+1n] = 0
 }
 
 for(let i = 0; i < runs; i++)
@@ -27,8 +29,8 @@ for(let i = 0; i < runs; i++)
 	results[die.roll()]++
 }
 
-console.log(results)
+console.log(`Random Results: ${JSON.stringify(results)}`)
 
-console.log(die.rollAdd(20))
-console.log(die.rollMultiply(20))
-console.log(die.rollArray(20))
+console.log(`Random Roll 20: ${die.rollAdd(20)}`)
+console.log(`Random Multiply 20: ${die.rollMultiply(20)}`)
+console.log(`Random Array 20: ` + die.rollArray(20))
