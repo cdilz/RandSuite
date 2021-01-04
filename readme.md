@@ -1,5 +1,63 @@
-The whole repository is in a state of flux as I decide how best to organize and ultimately present everything to the end user.
+Generators to geenerate random BigInts (unless otherwise specified in the docs) as well as some tools to simulate various random activities such as flipping a coin or rolling a die.
 
-Early-ish stages of a suite of random number generators and helpers.
+Importing default will give you an object full of classes that looks a little bit like this:
+```
+{
+	// Where all the random number generators are.
+	GENERATOR:
+	{
+		// Used as a basis for all other generators. Should generate random numbers, but isn't recommended.
+		BASE,
+		// Uses crypto to generate random values. Is slow.
+		CRYPTO,
+		// Uses Math.random(), but is odd-heavy.
+		MATH
+	},
+	// Classes to randomly select from an array.
+	ARRAY:
+	{
+		// Base random array selector, works fine standalone.
+		BASE,
+		// Randomly selects from an array using weights to favor certain results.
+		LOADED
+	},
+	// Classes to randomly flip a coin.
+	COIN:
+	{
+		// Base for flipping a coin. No children, but named such for consistency.
+		BASE
+	},
+	// Classes that represent a card.
+	CARD:
+	{
+		// Base for cards. Use to make your own cards. No children, but named such for consistency.
+		BASE
+	},
+	// Classes that represent a deck of cards.
+	DECK:
+	{
+		// Used as a base for all other decks. Fill it with custom cards.
+		BASE,
+		// Classes that represent a standard deck of cards (hearts, clubs, spades, diamonds, Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King).
+		STANDARD:
+		{
+			// Standard deck. Named for consistency.
+			BASE,
+			// Standard deck, but with two jokers added.
+			JOKER
+		}
+	}
+	// Classes that represent a game die.
+	DIE:
+	{
+		// A normal die to roll, base for other dice.
+		BASE,
+		// A loaded die which has a weight on each side to favor certain results.
+		LOADED
+	}
+}
+```
 
-I eventually plan to spin off the random number generators into their own repo with NPM/Yarn access, but I need to make sure everything works properly first. Unfortunately most of the random number generators don't work properly in my testing. This applies mostly to XOR generators. I'm assuming it's because I'm testing with smaller bit ranges and don't know how to generate triples. I'm not sure why, but the one using Math is odd-heavy instead of evenly distributed.
+You can also import generator, array, coin, card, deck, and die to get just those parts if needed.
+
+There are other generators in the folders, but there are serious issues with them and they should not be used.
