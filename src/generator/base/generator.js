@@ -41,6 +41,12 @@ class Generator
 			args.bits = 128
 		}
 		this.bits = args.bits
+		if(typeof args.seed == typeof undefined)
+		{
+			args.seed = this.randSeed()
+		}
+
+		this.originalSeed = args.seed
 		this.seed = this.fixSeed(args.seed)
 	}
 
@@ -53,14 +59,7 @@ class Generator
 	 */
 	fixSeed(seed)
 	{
-		if(typeof seed == typeof undefined)
-		{
-			seed = this.randSeed()
-		}
-		else
-		{
-			seed = this.toBigInt(seed)
-		}
+		seed = this.toBigInt(seed)
 		return seed === 0n ? this.max : seed
 	}
 
@@ -88,30 +87,30 @@ class Generator
 	 */
 	splitSeed(count = 1)
 	{
-		let seedString = this.seed.toString()
+		let seedString = this.originalSeed.toString()
 		let splitLength = Math.floor(seedString.length / count)
 		let outArray = []
 
 		let slice = (start, length) =>
 		{
-			return this.fixBits(BigInt(seedString.substr(start, length)))
+			return this.toBigInt(seedString.substr(start, length))
 		}
 
 		if(splitLength == 0)
 		{
 			for(let i = 0; i < count; i++)
 			{
-				outArray.push(this.seed)
+				outArray.push(this.fixSeed(this.seed))
 			}
 		}
 		else
 		{
 			for(let i = 0; i < count - 1; i++)
 			{
-				outArray.push(slice(splitLength * i, splitLength))
+				outArray.push(this.fixSeed(slice(splitLength * i, splitLength)))
 			}
 
-			outArray.push(slice(splitLength * (count-1)))
+			outArray.push(this.fixSeed(slice(splitLength * (count-1))))
 		}
 
 		return outArray
@@ -194,7 +193,8 @@ class Generator
 			reversed = char + reversed
 		}
 
-		return this.fixBits(BigInt('0b' + reversed))
+		return BigInt('0b' + reversed)
+		//return this.fixBits(BigInt('0b' + reversed))
 	}
 
 	/**

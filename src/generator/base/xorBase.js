@@ -34,7 +34,17 @@ class XorBase extends Generator
 		triple[2] = this.toBigInt(triple[2])
 		this.triple = triple
 
-		this.state = this.splitSeed(this.seed, 1)
+		this.state = this.splitSeed(1)
+	}
+
+	random()
+	{
+		let x = this.state
+		x ^= x << this.triple[0]
+		x ^= x >> this.triple[1]
+		x ^= x << this.triple[2]
+		this.state = x
+		return x
 	}
 }
 

@@ -3,12 +3,19 @@
 import Generator from './generator/base/generator.js'
 import CryptoRNG from './generator/cryptorng.js'
 import MathRNG from './generator/mathrng.js'
+import XORBase from './generator/base/xorBase.js'
+//import XORCustom from './generator/xorshift/xorShiftCustom.js'
 
 let generator =
 {
 	BASE: Generator,
 	CRYPTO: CryptoRNG,
-	MATH: MathRNG
+	MATH: MathRNG,
+	XORSHIFT:
+	{
+		BASE: XORBase/*,
+		CUSTOM: XORCustom*/
+	}
 }
 
 import ArrayRNG from './array/array.js'
