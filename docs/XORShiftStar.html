@@ -30,7 +30,7 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>XORShiftStar<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">NON-FUNCTIONAL
+            <div class="class-description">Untested Functionality
 
 Class representing the XORShift* random number generator.</div>
         
@@ -95,7 +95,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_xorshift_xorShiftStar.js.html">generator/xorshift/xorShiftStar.js</a>, <a href="generator_xorshift_xorShiftStar.js.html#line16">line 16</a>
+        <a href="generator_xorshift_xorShiftStar.js.html">generator/xorshift/xorShiftStar.js</a>, <a href="generator_xorshift_xorShiftStar.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -239,7 +239,7 @@ Class representing the XORShift* random number generator.</div>
 
 
 <div class="description">
-    Minimum value for RNG based on bits (should always be 0).
+    Minimum value for RNG based on bits.
 </div>
 
 
@@ -734,7 +734,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line128">line 128</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line127">line 127</a>
     </li></ul></dd>
     
 
@@ -915,7 +915,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line54">line 54</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -1088,6 +1088,171 @@ Class representing the XORShift* random number generator.</div>
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line300">line 300</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="leftShift"><span class="type-signature"></span>leftShift<span class="signature">(value, amount)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Simulates a left shift to a BigInt. When left shifting a BigInt it doesn't lose its leftmost bits, so we have to do that ourselves.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value to shift</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount to shift</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="XorBase.html#leftShift">XorBase#leftShift</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="generator_base_xorBase.js.html">generator/base/xorBase.js</a>, <a href="generator_base_xorBase.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -1478,7 +1643,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_xorshift_xorShiftStar.js.html">generator/xorshift/xorShiftStar.js</a>, <a href="generator_xorshift_xorShiftStar.js.html#line24">line 24</a>
+        <a href="generator_xorshift_xorShiftStar.js.html">generator/xorshift/xorShiftStar.js</a>, <a href="generator_xorshift_xorShiftStar.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -1646,7 +1811,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line74">line 74</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -1806,7 +1971,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line185">line 185</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -1986,7 +2151,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line89">line 89</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -2155,7 +2320,7 @@ Class representing the XORShift* random number generator.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line140">line 140</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line139">line 139</a>
     </li></ul></dd>
     
 
@@ -2219,13 +2384,13 @@ Class representing the XORShift* random number generator.</div>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ArrayRNG.html">ArrayRNG</a></li><li><a href="Card.html">Card</a></li><li><a href="Coin.html">Coin</a></li><li><a href="CryptoRNG.html">CryptoRNG</a></li><li><a href="Deck.html">Deck</a></li><li><a href="Die.html">Die</a></li><li><a href="Generator.html">Generator</a></li><li><a href="LoadedArray.html">LoadedArray</a></li><li><a href="loadedDie.html">loadedDie</a></li><li><a href="MathRNG.html">MathRNG</a></li><li><a href="RandSuite.html">RandSuite</a></li><li><a href="Standard.html">Standard</a></li><li><a href="StandardWithJoker.html">StandardWithJoker</a></li><li><a href="XorBase.html">XorBase</a></li><li><a href="XORShiftPlus.html">XORShiftPlus</a></li><li><a href="XORShiftStar.html">XORShiftStar</a></li><li><a href="XORWow.html">XORWow</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ArrayRNG.html">ArrayRNG</a></li><li><a href="Card.html">Card</a></li><li><a href="Coin.html">Coin</a></li><li><a href="CryptoRNG.html">CryptoRNG</a></li><li><a href="Deck.html">Deck</a></li><li><a href="Die.html">Die</a></li><li><a href="Generator.html">Generator</a></li><li><a href="LoadedArray.html">LoadedArray</a></li><li><a href="loadedDie.html">loadedDie</a></li><li><a href="MathRNG.html">MathRNG</a></li><li><a href="Standard.html">Standard</a></li><li><a href="StandardWithJoker.html">StandardWithJoker</a></li><li><a href="XorBase.html">XorBase</a></li><li><a href="XORShiftCustom.html">XORShiftCustom</a></li><li><a href="XORShiftPlus.html">XORShiftPlus</a></li><li><a href="XORShiftStar.html">XORShiftStar</a></li><li><a href="XORWow.html">XORWow</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Jan 01 2021 12:18:37 GMT-0500 (GMT-05:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Jan 20 2021 15:36:05 GMT-0500 (GMT-05:00)
 </footer>
 
 <script> prettyPrint(); </script>

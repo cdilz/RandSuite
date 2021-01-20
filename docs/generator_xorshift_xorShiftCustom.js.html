@@ -1,4 +1,32 @@
-'use strict'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: generator/xorshift/xorShiftCustom.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: generator/xorshift/xorShiftCustom.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
 
 import XorBase from '../base/xorBase.js'
 
@@ -14,7 +42,7 @@ import XorBase from '../base/xorBase.js'
  * @param {BigInt|Number|String|Buffer} [args.seed] - The seed for the random number generator. (May be ignored)
  * @param {Number} [args.stateCount = 1] - Number of states to use.
  * @param {Number} [args.stepCount = 3] - Number of steps.
- * @param {String[]} [args.steps = ['<<', '>>>', '<<']] - How you want to shift: << for left with xor, >> for right shift with xor, & for and, | for or, ~ for not, ^ for xor, r for reverse, + for add, * for multiply, / for divide, - for subtract, % for mod, ^ or ** for exponential, f for function (this takes one argument, the step, the function must be placed in the shiftAmount array).
+ * @param {String[]} [args.steps = ['&lt;&lt;', '>>>', '&lt;&lt;']] - How you want to shift: &lt;&lt; for left with xor, >> for right shift with xor, &amp; for and, | for or, ~ for not, ^ for xor, r for reverse, + for add, * for multiply, / for divide, - for subtract, % for mod, ^ or ** for exponential, f for function (this takes one argument, the step, the function must be placed in the shiftAmount array).
  * @param {BigInt[]|Number[]|String[]|Buffer[]|function[]} [args.shiftAmount = [23n,17n,26n]] - How much to shift on each step. Doesn't apply when step is set to: r, ~, f.
  * 
  * @inheritdoc
@@ -28,14 +56,14 @@ class XORShiftCustom extends XorBase
 		this.stateCount = args.stateCount || 1
 		this.state = this.splitSeed(this.stateCount)
 		this.stepCount = args.stepCount || 3
-		this.steps = args.steps || ['<<', '>>', '<<']
+		this.steps = args.steps || ['&lt;&lt;', '>>', '&lt;&lt;']
 		this.shiftAmount = args.shiftAmount || [23n, 17n, 26n]
 
 		if(this.shiftAmount.length > this.shiftCount)
 		{
 			throw 'args.shiftCount lower than length of args.shiftAmount'
 		}
-		else if(this.shiftAmount.length < this.shiftCount)
+		else if(this.shiftAmount.length &lt; this.shiftCount)
 		{
 			throw 'args.shiftCount higher than length of args.shiftAmount'
 		}
@@ -44,12 +72,12 @@ class XORShiftCustom extends XorBase
 		{
 			throw 'args.shiftCount lower than length of args.steps'
 		}
-		else if(this.steps.length < this.shiftCount)
+		else if(this.steps.length &lt; this.shiftCount)
 		{
 			throw 'args.shiftCount higher than length of args.steps'
 		}
 
-		for(let i = 0; i < this.shiftAmount.length; i++)
+		for(let i = 0; i &lt; this.shiftAmount.length; i++)
 		{
 			if(typeof this.shiftAmount[i] != typeof constructor)
 			{
@@ -65,7 +93,7 @@ class XORShiftCustom extends XorBase
 		let stateLen = this.state.length - 1
 		newState.push(this.state[stateLen])
 
-		for(let i = 0; i < stateLen; i++)
+		for(let i = 0; i &lt; stateLen; i++)
 		{
 				newState.push(this.state[i])
 		}
@@ -80,12 +108,12 @@ class XORShiftCustom extends XorBase
 
 		switch (step) 
 		{
-			case '<<':
+			case '&lt;&lt;':
 				return state ^ this.leftShift(state, shift)
 			case '>>':
 				return state ^ (state >> shift)
-			case '&':
-				return state & shift
+			case '&amp;':
+				return state &amp; shift
 			case '|':
 				return state | shift
 			case '~':
@@ -120,7 +148,7 @@ class XORShiftCustom extends XorBase
 		this.stateAdjust()
 		let state = randState[randState.length - 1]
 
-		for(let i = 0; i < this.stepCount; i++)
+		for(let i = 0; i &lt; this.stepCount; i++)
 		{
 			state = this.doMath(i, state)
 		}
@@ -130,4 +158,26 @@ class XORShiftCustom extends XorBase
 	}
 }
 
-export default XORShiftCustom
+export default XORShiftCustom</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ArrayRNG.html">ArrayRNG</a></li><li><a href="Card.html">Card</a></li><li><a href="Coin.html">Coin</a></li><li><a href="CryptoRNG.html">CryptoRNG</a></li><li><a href="Deck.html">Deck</a></li><li><a href="Die.html">Die</a></li><li><a href="Generator.html">Generator</a></li><li><a href="LoadedArray.html">LoadedArray</a></li><li><a href="loadedDie.html">loadedDie</a></li><li><a href="MathRNG.html">MathRNG</a></li><li><a href="Standard.html">Standard</a></li><li><a href="StandardWithJoker.html">StandardWithJoker</a></li><li><a href="XorBase.html">XorBase</a></li><li><a href="XORShiftCustom.html">XORShiftCustom</a></li><li><a href="XORShiftPlus.html">XORShiftPlus</a></li><li><a href="XORShiftStar.html">XORShiftStar</a></li><li><a href="XORWow.html">XORWow</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Jan 20 2021 15:36:05 GMT-0500 (GMT-05:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

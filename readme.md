@@ -11,7 +11,21 @@ Importing default will give you an object full of classes that looks a little bi
 		// Uses crypto to generate random values. Is slow.
 		CRYPTO,
 		// Uses Math.random(), but is odd-heavy.
-		MATH
+		MATH,
+		// The XORShift style generators. They use XOR and left and right shifts to make random numbers. They are untested and the default values may not work.
+		XORSHIFT:
+		{
+			// Basic XORShift. 
+			BASE,
+			// Highly customizable algorithm. Plese refer to documentations for how to do so.
+			CUSTOM,
+			// Implementation of XORShift+
+			PLUS,
+			// Implementation of XORShift*
+			STAR,
+			// Implementation of XORWow
+			WOW
+		}
 	},
 	// Classes to randomly select from an array.
 	ARRAY:

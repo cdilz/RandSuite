@@ -1,11 +1,9 @@
 'use strict'
 
-throw 'Not Yet Implemented'
-
 import XorBase from '../base/xorBase.js'
 
 /**
- * NON-FUNCTIONAL
+ * Untested Functionality
  * 
  * Class representing the XORShift* random number generator.
  * 
@@ -24,9 +22,9 @@ class XORShiftStar extends XorBase
 	random()
 	{
 		let x = this.state[0]
-		x = this.fixBits(x ^ this.fixBits(x >> this.triple[0]))
-		x = this.fixBits(x ^ this.fixBits(x << this.triple[1]))
-		x = this.fixBits(x ^ this.fixBits(x >> this.triple[2]))
+		x = x ^ (x >> this.triple[0])
+		x = x ^ (x << this.triple[1])
+		x = x ^ (x >> this.triple[2])
 		this.state[0] = x
 		return this.fixBits(x * this.fixBits(BigInt(0x2545F4914F6CDD1D)))
 	}

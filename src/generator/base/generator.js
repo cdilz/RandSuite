@@ -13,7 +13,7 @@ import crypto from 'crypto'
 class Generator
 {
 	/**
-	 * Minimum value for RNG based on bits (should always be 0).
+	 * Minimum value for RNG based on bits.
 	 * 
 	 * @type {BigInt}
 	 */

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Generator</title>
+    <title>JSDoc: Class: XORShiftCustom</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Generator</h1>
+    <h1 class="page-title">Class: XORShiftCustom</h1>
 
     
 
@@ -28,9 +28,11 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Generator<span class="signature">(args<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>XORShiftCustom<span class="signature">(args)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Represents a random number generator. To be used as a superclass only.</div>
+            <div class="class-description">Untested Functionality
+
+Class representing a custom XORShift random number generator.</div>
         
     
 </header>
@@ -45,7 +47,7 @@
     
 
     
-    <h4 class="name" id="Generator"><span class="type-signature"></span>new Generator<span class="signature">(args<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="XORShiftCustom"><span class="type-signature"></span>new XORShiftCustom<span class="signature">(args)</span><span class="type-signature"></span></h4>
     
 
     
@@ -73,8 +75,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -99,16 +99,6 @@
             
             </td>
 
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
             
 
             
@@ -225,6 +215,174 @@
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>stateCount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    1
+                
+                </td>
+            
+
+            <td class="description last">Number of states to use.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stepCount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    3
+                
+                </td>
+            
+
+            <td class="description last">Number of steps.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>steps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    ['&lt;&lt;', '>>>', '&lt;&lt;']
+                
+                </td>
+            
+
+            <td class="description last">How you want to shift: << for left with xor, >> for right shift with xor, & for and, | for or, ~ for not, ^ for xor, r for reverse, + for add, * for multiply, / for divide, - for subtract, % for mod, ^ or ** for exponential, f for function (this takes one argument, the step, the function must be placed in the shiftAmount array).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shiftAmount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;BigInt></span>
+|
+
+<span class="param-type">Array.&lt;Number></span>
+|
+
+<span class="param-type">Array.&lt;String></span>
+|
+
+<span class="param-type">Array.&lt;Buffer></span>
+|
+
+<span class="param-type">Array.&lt;function()></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    [23n,17n,26n]
+                
+                </td>
+            
+
+            <td class="description last">How much to shift on each step. Doesn't apply when step is set to: r, ~, f.</td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -269,7 +427,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line13">line 13</a>
+        <a href="generator_xorshift_xorShiftCustom.js.html">generator/xorshift/xorShiftCustom.js</a>, <a href="generator_xorshift_xorShiftCustom.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -301,6 +459,17 @@
 
     
     </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="XorBase.html">XorBase</a></li>
+    </ul>
+
 
     
 
@@ -352,6 +521,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#max">XorBase#max</a>
+    </li></ul></dd>
     
 
     
@@ -424,6 +598,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#min">XorBase#min</a>
+    </li></ul></dd>
     
 
     
@@ -504,6 +683,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#bool">XorBase#bool</a>
+    </li></ul></dd>
     
 
     
@@ -659,6 +843,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#character">XorBase#character</a>
+    </li></ul></dd>
     
 
     
@@ -852,6 +1041,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#fixBits">XorBase#fixBits</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1028,6 +1222,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#fixSeed">XorBase#fixSeed</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1195,6 +1394,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#float">XorBase#float</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1216,6 +1420,171 @@
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line300">line 300</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="leftShift"><span class="type-signature"></span>leftShift<span class="signature">(value, amount)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Simulates a left shift to a BigInt. When left shifting a BigInt it doesn't lose its leftmost bits, so we have to do that ourselves.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value to shift</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount to shift</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#leftShift">XorBase#leftShift</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="generator_base_xorBase.js.html">generator/base/xorBase.js</a>, <a href="generator_base_xorBase.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -1282,6 +1651,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#number">XorBase#number</a>
+    </li></ul></dd>
     
 
     
@@ -1465,6 +1839,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#numberBetween">XorBase#numberBetween</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1570,6 +1949,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#random">XorBase#random</a>
+    </li></ul></dd>
     
 
     
@@ -1738,6 +2122,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#randSeed">XorBase#randSeed</a>
+    </li></ul></dd>
+    
 
     
 
@@ -1892,6 +2281,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#reverseBits">XorBase#reverseBits</a>
+    </li></ul></dd>
     
 
     
@@ -2068,6 +2462,11 @@
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#splitSeed">XorBase#splitSeed</a>
+    </li></ul></dd>
+    
 
     
 
@@ -2231,6 +2630,11 @@
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="XorBase.html#toBigInt">XorBase#toBigInt</a>
+    </li></ul></dd>
     
 
     

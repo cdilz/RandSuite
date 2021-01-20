@@ -228,7 +228,7 @@ class TestSuite
 		*/
 	}
 
-	toConsole()
+	toConsole(showValues)
 	{	
 		console.log('='.repeat(12))
 		console.log(`WARNING: due to how BigInt works mid, median, and variance may be inaccurate
@@ -248,58 +248,46 @@ class TestSuite
 		console.log('\n')
 		console.log(`Mean: ${this.mean}`)
 		console.log(`Median: ${this.median}`)
-		console.log(`Mode: ${this.mode}`)
+		//console.log(`Mode: ${this.mode}`)
 		console.log(`Variance: ${this.variance}`)
 		console.log('='.repeat(12))
 
-		let entries = Object.entries(this.count)
-		for(let i = 0; i < entries.length; i++)
+		if(showValues)
 		{
-			console.log(`${entries[i][0]}: ${entries[i][1]}`)
+			let entries = Object.entries(this.count)
+			for(let i = 0; i < entries.length; i++)
+			{
+				// console.log(`${entries[i][0]}: ${entries[i][1]}`)
+			}
 		}
 	}
 }
 
-let loops = 1000000n
+let loops = 1000000
 
 let args = 
 {
 	seed: "This is a fantastic seed!sw45oiyhsmnzoderigjnyth90w4s5ierkmghio9r4sdi5ekg0oisw4er5jm9ghiserjm5npj90y8jse45r0m9g",
-	bits: 6/*,
-	stateCount: 6,
-	stepCount: 8,
+	bits: 32/*,
+	stateCount: 1,
+	stepCount: 3,
 	steps: 
 	[
 		'<<',
 		'>>',
-		'*',
-		'r',
-		'**',
 		'<<',
-		'>>',
-		'<<'
 	],
 	stateToUse:
 	[
-		5,
-		5,
-		5,
-		5,
-		5,
-		5,
-		5,
-		5
+		0,
+		0,
+		0
 	],
 	shiftAmount:
 	[
 		3,
 		5,
-		2,
-		0,
-		2,
-		1,
-		13,
-		12
+		2
 	]*/
 }
 
@@ -309,7 +297,7 @@ let gen = new RandSuite.GENERATOR.XORSHIFT.CUSTOM(args)
 let stats = new TestSuite(gen, loops)
 
 stats.run()
-stats.toConsole()
+stats.toConsole(true)
 
 // countEntries()
 
