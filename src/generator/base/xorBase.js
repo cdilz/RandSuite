@@ -40,25 +40,6 @@ class XorBase extends Generator
 		this.state = this.splitSeed(1)
 	}
 
-	/**
-	 * Simulates a left shift to a BigInt. When left shifting a BigInt it doesn't lose its leftmost bits, so we have to do that ourselves.
-	 * 
-	 * @param {BigInt} value - The value to shift
-	 * @param {BigInt} amount - The amount to shift
-	 */
-	leftShift(value, amount)
-	{
-		let shifted = value << amount
-		let shiftedString = shifted.toString(2)
-		if(shiftedString.length > this.bits)
-		{
-			shiftedString = shiftedString.slice(-this.bits)
-			shiftedString = '0b' + shiftedString
-			shifted = BigInt(shiftedString)
-		}
-		return shifted
-	}
-
 	random()
 	{
 		let x = this.state

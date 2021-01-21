@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: generator/mathrng.js</title>
+    <title>JSDoc: Source: generator/middleSquare.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: generator/mathrng.js</h1>
+    <h1 class="page-title">Source: generator/middleSquare.js</h1>
 
     
 
@@ -31,46 +31,101 @@
 import Generator from './base/generator.js'
 
 /**
- * Class representing a random number generator that uses the built in Math.random().
+ * Class representing a middle square number generator with a crypto backend.
  * 
  * @extends Generator
  * 
  * @inheritdoc
  */
-class MathRNG extends Generator
+class MiddleSquare extends Generator
 {
 	/**
-	 * 'Adjusts' a floating point by removing non-decimal characters.
+	 * Minimum value for RNG based on bits.
 	 * 
-	 * @param {Number} value - The number to be 'adjusted'
+	 * @type {BigInt}
 	 */
-	adjust(value)
+	get min() {return 0n}
+
+	constructor(args)
 	{
-		let stringVal = value.toString()
-		// Remove non-digit characters.
-		let output = BigInt(stringVal.replaceAll(/[\D]/g, ''))
-		return BigInt(output)
+		super(args)
+
+		if(this.bits == 1)
+		{
+			this.seedBits = 3
+		}
+		else
+		{
+			this.seedBits = 2 * this.bits
+		}
+		this.seedState = this.toBigInt(this.seed, this.seedBits)
+		this.weylState = 0n
 	}
 
 	/**
-	 * Generates a random number by using Math.random and adjusting it.
+	 * Attempt to make a Weyl value for a Weyl sequence. Unsure if it actually works.
 	 * 
 	 * @returns {BigInt}
 	 */
-	random()
+	makeWeyl()
 	{
-		let rand = this.adjust(Math.random())
-		//rand = rand ** this.bits
-		while(rand &lt; (this.max + 1n))
+		if(typeof this.weyl == typeof undefined)
 		{
-			rand += rand
+			let mid = ((2n ** BigInt(this.seedBits)) - 1n)/(BigInt(this.seedBits) * 2n)
+			// Means it's even, but we want odd
+			if(mid % 2n == 0n)
+			{
+				mid++
+			}
+
+			this.weyl = mid
 		}
 
-		return this.fixBits(rand) //rand % (this.max + 1n)
+		return this.weyl
+	}
+
+	/**
+	 * Returns the middle this.bits of a value
+	 * 
+	 * @param {BigInt} value - The value to get the middle of.
+	 * 
+	 * @returns {BigInt} - The middle of value.
+	 */
+	getMiddle(value)
+	{
+		let bitDiff = BigInt(this.seedBits - this.bits)
+		let left = 0n
+		let right = 0n
+
+		// If the difference between bits is odd, move left more than we move right.
+		if(bitDiff % 2n != 0n)
+		{
+			left = (bitDiff/2n) + 1n
+			right = left + (bitDiff/2n)
+		}
+		else
+		{
+			left = (bitDiff/2n)
+			right = left * 2n
+		}
+
+		let newValue = this.leftShift(value, left, this.seedBits)
+		newValue = newValue >> right
+		return newValue
+	}
+
+	random()
+	{
+		let newState = this.seedState ** 2n
+		this.weylState = this.fixBits(this.weylState + this.makeWeyl(), this.seedBits)
+		newState = this.fixBits(newState + this.weylState, this.seedBits)
+		newState = this.getMiddle(newState)
+		this.seedState = newState
+		return newState
 	}
 }
 
-export default MathRNG</code></pre>
+export default MiddleSquare</code></pre>
         </article>
     </section>
 

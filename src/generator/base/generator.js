@@ -51,6 +51,28 @@ class Generator
 	}
 
 	/**
+	 * Simulates a left shift to a BigInt. When left shifting a BigInt it doesn't lose its leftmost bits, so we have to do that ourselves.
+	 * 
+	 * @param {BigInt} value - The value to shift.
+	 * @param {BigInt} amount - The amount to shift.
+	 * @param {Number} [bits=this.bits] - The number of bits value should be.
+	 * 
+	 * @returns {BigInt} - The number left shifted.
+	 */
+	leftShift(value, amount, bits = this.bits)
+	{
+		let shifted = value << amount
+		let shiftedString = shifted.toString(2)
+		if(shiftedString.length > bits)
+		{
+			shiftedString = shiftedString.slice(-bits)
+			shiftedString = '0b' + shiftedString
+			shifted = BigInt(shiftedString)
+		}
+		return shifted
+	}
+
+	/**
 	 * Coerces the seed into a BigInt and ensures it's not equivalent to 0.
 	 * 
 	 * @param {BigInt|Number|String|Buffer} [seed] - If not entered, a random seed will be generated.
@@ -132,11 +154,12 @@ class Generator
 	/**
 	 * Attempts to Convert the input value to BigInt.
 	 * 
-	 * @param {BigInt|Number|String|Buffer} value - Value to be converted to BigInt
+	 * @param {BigInt|Number|String|Buffer} value - Value to be converted to BigInt.
+	 * @param {Number} [bits=this.bits] - Bit length to convert to.
 	 * 
 	 * @returns {BigInt}
 	 */
-	toBigInt(value)
+	toBigInt(value, bits = this.bits)
 	{
 		let output = undefined
 	
@@ -171,7 +194,7 @@ class Generator
 	
 		output = BigInt(output)
 	
-		return this.fixBits(output)
+		return this.fixBits(output, bits)
 	}
 
 	/**

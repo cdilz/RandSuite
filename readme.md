@@ -12,6 +12,8 @@ Importing default will give you an object full of classes that looks a little bi
 		CRYPTO,
 		// Uses Math.random(), but is odd-heavy.
 		MATH,
+		// An attempt at the Middle Square algorithm. With an attempt at a Weyl Sequence generator. Unfortunately the numbre sequence repeats at low bits and therefore probably does at higher bit ranges too.
+		MIDDLESQUARE,
 		// The XORShift style generators. They use XOR and left and right shifts to make random numbers. They are untested and the default values may not work.
 		XORSHIFT:
 		{

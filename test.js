@@ -12,12 +12,22 @@ class TestSuite
 		this.internal = {}
 	}
 
-	run()
+	run(print)
 	{
 		this.internal = {}
+		let printText = ''
 		for(let i = 0; i < this.rounds; i++)
 		{
 			this.values.push(this.generator.random())
+			if(print)
+			{
+				printText += this.values[i] + '\n'
+			}
+		}
+
+		if(print)
+		{
+			console.log(printText)
 		}
 
 		this.values.sort((a,b) => {return (a < b) ? -1 : ((a > b) ? 1 : 0)})
@@ -248,7 +258,7 @@ class TestSuite
 		console.log('\n')
 		console.log(`Mean: ${this.mean}`)
 		console.log(`Median: ${this.median}`)
-		//console.log(`Mode: ${this.mode}`)
+		console.log(`Mode: ${this.mode}`)
 		console.log(`Variance: ${this.variance}`)
 		console.log('='.repeat(12))
 
@@ -257,7 +267,7 @@ class TestSuite
 			let entries = Object.entries(this.count)
 			for(let i = 0; i < entries.length; i++)
 			{
-				// console.log(`${entries[i][0]}: ${entries[i][1]}`)
+				console.log(`${entries[i][0]}: ${entries[i][1]}`)
 			}
 		}
 	}
@@ -268,12 +278,12 @@ let loops = 1000000
 let args = 
 {
 	seed: "This is a fantastic seed!sw45oiyhsmnzoderigjnyth90w4s5ierkmghio9r4sdi5ekg0oisw4er5jm9ghiserjm5npj90y8jse45r0m9g",
-	bits: 32/*,
+	bits: 4/*,
 	stateCount: 1,
 	stepCount: 3,
 	steps: 
 	[
-		'<<',
+		'<<',6
 		'>>',
 		'<<',
 	],
@@ -292,12 +302,16 @@ let args =
 }
 
 //let gen = new RandSuite.list.CRYPTO(args)
-let gen = new RandSuite.GENERATOR.XORSHIFT.CUSTOM(args)
+//let gen = new RandSuite.GENERATOR.XORSHIFT.CUSTOM(args)
+let gen = new RandSuite.GENERATOR.MIDDLESQUARE(args)
 
 let stats = new TestSuite(gen, loops)
 
-stats.run()
-stats.toConsole(true)
+let printValues = true
+let printCounts = false
+
+stats.run(printValues)
+stats.toConsole(printCounts)
 
 // countEntries()
 

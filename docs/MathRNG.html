@@ -512,7 +512,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line279">line 279</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line302">line 302</a>
     </li></ul></dd>
     
 
@@ -672,7 +672,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line290">line 290</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line313">line 313</a>
     </li></ul></dd>
     
 
@@ -869,7 +869,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line127">line 127</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line149">line 149</a>
     </li></ul></dd>
     
 
@@ -1050,7 +1050,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line60">line 60</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -1222,7 +1222,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line300">line 300</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line323">line 323</a>
     </li></ul></dd>
     
 
@@ -1247,6 +1247,260 @@
 
 
 
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="leftShift"><span class="type-signature"></span>leftShift<span class="signature">(value, amount, bits<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {BigInt}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Simulates a left shift to a BigInt. When left shifting a BigInt it doesn't lose its leftmost bits, so we have to do that ourselves.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The value to shift.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">BigInt</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The amount to shift.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bits</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this.bits
+                
+                </td>
+            
+
+            <td class="description last">The number of bits value should be.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Generator.html#leftShift">Generator#leftShift</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The number left shifted.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">BigInt</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1315,7 +1569,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line217">line 217</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line240">line 240</a>
     </li></ul></dd>
     
 
@@ -1502,7 +1756,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line230">line 230</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line253">line 253</a>
     </li></ul></dd>
     
 
@@ -1781,7 +2035,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line73">line 73</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -1941,7 +2195,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line184">line 184</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line207">line 207</a>
     </li></ul></dd>
     
 
@@ -2121,7 +2375,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line88">line 88</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line110">line 110</a>
     </li></ul></dd>
     
 
@@ -2175,7 +2429,7 @@
     
 
     
-    <h4 class="name" id="toBigInt"><span class="type-signature"></span>toBigInt<span class="signature">(value)</span><span class="type-signature"> &rarr; {BigInt}</span></h4>
+    <h4 class="name" id="toBigInt"><span class="type-signature"></span>toBigInt<span class="signature">(value, bits<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {BigInt}</span></h4>
     
 
     
@@ -2207,7 +2461,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2241,10 +2499,61 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">Value to be converted to BigInt</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Value to be converted to BigInt.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bits</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this.bits
+                
+                </td>
+            
+
+            <td class="description last">Bit length to convert to.</td>
         </tr>
 
     
@@ -2290,7 +2599,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line139">line 139</a>
+        <a href="generator_base_generator.js.html">generator/base/generator.js</a>, <a href="generator_base_generator.js.html#line162">line 162</a>
     </li></ul></dd>
     
 
@@ -2354,13 +2663,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ArrayRNG.html">ArrayRNG</a></li><li><a href="Card.html">Card</a></li><li><a href="Coin.html">Coin</a></li><li><a href="CryptoRNG.html">CryptoRNG</a></li><li><a href="Deck.html">Deck</a></li><li><a href="Die.html">Die</a></li><li><a href="Generator.html">Generator</a></li><li><a href="LoadedArray.html">LoadedArray</a></li><li><a href="loadedDie.html">loadedDie</a></li><li><a href="MathRNG.html">MathRNG</a></li><li><a href="Standard.html">Standard</a></li><li><a href="StandardWithJoker.html">StandardWithJoker</a></li><li><a href="XorBase.html">XorBase</a></li><li><a href="XORShiftCustom.html">XORShiftCustom</a></li><li><a href="XORShiftPlus.html">XORShiftPlus</a></li><li><a href="XORShiftStar.html">XORShiftStar</a></li><li><a href="XORWow.html">XORWow</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ArrayRNG.html">ArrayRNG</a></li><li><a href="Card.html">Card</a></li><li><a href="Coin.html">Coin</a></li><li><a href="CryptoRNG.html">CryptoRNG</a></li><li><a href="Deck.html">Deck</a></li><li><a href="Die.html">Die</a></li><li><a href="Generator.html">Generator</a></li><li><a href="LoadedArray.html">LoadedArray</a></li><li><a href="loadedDie.html">loadedDie</a></li><li><a href="MathRNG.html">MathRNG</a></li><li><a href="MiddleSquare.html">MiddleSquare</a></li><li><a href="Standard.html">Standard</a></li><li><a href="StandardWithJoker.html">StandardWithJoker</a></li><li><a href="XorBase.html">XorBase</a></li><li><a href="XORShiftCustom.html">XORShiftCustom</a></li><li><a href="XORShiftPlus.html">XORShiftPlus</a></li><li><a href="XORShiftStar.html">XORShiftStar</a></li><li><a href="XORWow.html">XORWow</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Jan 20 2021 15:36:05 GMT-0500 (GMT-05:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Thu Jan 21 2021 14:39:47 GMT-0500 (GMT-05:00)
 </footer>
 
 <script> prettyPrint(); </script>

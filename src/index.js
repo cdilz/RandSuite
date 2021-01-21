@@ -8,12 +8,14 @@ import XORCustom from './generator/xorshift/xorShiftCustom.js'
 import XORShiftPlus from './generator/xorshift/xorShiftPlus.js'
 import XORShiftStar from './generator/xorshift/xorShiftStar.js'
 import XORWow from './generator/xorshift/xorWow.js'
+import MiddleSquare from './generator/middleSquare.js'
 
 let generator =
 {
 	BASE: Generator,
 	CRYPTO: CryptoRNG,
 	MATH: MathRNG,
+	MIDDLESQUARE: MiddleSquare,
 	XORSHIFT:
 	{
 		BASE: XORBase,
