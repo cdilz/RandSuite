@@ -76,7 +76,7 @@ class Coin
 	}
 
 	/**
-	 * Flips a coun count number of times
+	 * Flips a coin count number of times
 	 * 
 	 * @param {Number} count 
 	 * @param {Boolean} [forceArray=false]
