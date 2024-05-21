@@ -22,20 +22,20 @@ arng.push('c', 25)
 arng.push('d', 108)
 arng.push('e', 6)
 
-console.log(`Peek 'e', Weight 6: ${arng.peek().value == 'e' && arng.peek().weight == 6}`)
+console.log(`Peek 'e', Weight 6: ${arng.peek().value === 'e' && arng.peek().weight === 6}`)
 let res = arng.pop()
-console.log(`Pop 'e', Weight 6: ${res.value == 'e' && res.weight == 6}`)
-console.log(`Peek 'd', Weight 108: ${arng.peek().value == 'd' && arng.peek().weight == 108}`)
+console.log(`Pop 'e', Weight 6: ${res.value === 'e' && res.weight === 6}`)
+console.log(`Peek 'd', Weight 108: ${arng.peek().value === 'd' && arng.peek().weight === 108}`)
 
 arng.replace(1, 'car', 13)
-console.log(`Replace Peek 'car', Weight 13: ${arng.peek(1).value == 'car' && arng.peek(1).weight == 13}`)
+console.log(`Replace Peek 'car', Weight 13: ${arng.peek(1).value === 'car' && arng.peek(1).weight === 13}`)
 
 arng.empty()
-console.log(`Array Empty: ${arng.array.length == 0}`)
+console.log(`Array Empty: ${arng.array.length === 0}`)
 
 arng.replaceArray(testArray)
 
-console.log(`Replace Array Peek 4, Weight 16: ${arng.peek().value == 4 && arng.peek().weight == 16}`)
+console.log(`Replace Array Peek 4, Weight 16: ${arng.peek().value === 4 && arng.peek().weight === 16}`)
 
 let results = 
 {

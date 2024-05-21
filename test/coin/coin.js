@@ -24,11 +24,11 @@ function test(coin)
 
 	for(let i = 0; i < coins.length; i++)
 	{
-		if(coins[i] == coin.heads)
+		if(coins[i] === coin.heads)
 		{
 			output[coin.heads]++
 		}
-		else if(coins[i] == coin.tails)
+		else if(coins[i] === coin.tails)
 		{
 			output[coin.tails]++
 		}

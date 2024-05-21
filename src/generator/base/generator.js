@@ -28,7 +28,7 @@ export default class Generator
 
 	constructor(args)
 	{
-		if(typeof args == typeof undefined)
+		if(typeof args === typeof undefined)
 		{
 			args = 
 			{
@@ -41,7 +41,7 @@ export default class Generator
 			args.bits = 128
 		}
 		this.bits = args.bits
-		if(typeof args.seed == typeof undefined)
+		if(typeof args.seed === typeof undefined)
 		{
 			args.seed = this.randSeed()
 		}
@@ -118,7 +118,7 @@ export default class Generator
 			return this.toBigInt(seedString.substr(start, length))
 		}
 
-		if(splitLength == 0)
+		if(splitLength === 0)
 		{
 			for(let i = 0; i < count; i++)
 			{
@@ -269,7 +269,7 @@ export default class Generator
 			throw error
 		}
 
-		if(max == min)
+		if(max === min)
 		{
 			return min
 		}

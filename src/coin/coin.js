@@ -96,7 +96,7 @@ export default class Coin
 
 		let output = []
 
-		if(count == 1)
+		if(count === 1)
 		{
 			// Gets a random boolean, if it's heads, get the correct result for heads, else get the one for tails.
 			let result = this.generator.bool() ? this.heads : this.tails

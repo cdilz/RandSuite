@@ -50,9 +50,9 @@ export default class Card
 	 */
 	equals(card)
 	{
-		let color = card.color == this.color
-		let rank = card.rank == this.rank
-		let suit = card.suit == this.suit
+		let color = card.color === this.color
+		let rank = card.rank === this.rank
+		let suit = card.suit === this.suit
 
 		return suit && rank && color
 	}

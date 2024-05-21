@@ -35,7 +35,7 @@ class TestSuite
 
 	get min()
 	{
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return 0n
 		}
@@ -45,7 +45,7 @@ class TestSuite
 
 	get max()
 	{		
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return 0n
 		}
@@ -55,7 +55,7 @@ class TestSuite
 
 	get mean()
 	{
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return 0n
 		}
@@ -73,7 +73,7 @@ class TestSuite
 
 	get median()
 	{
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return 0n
 		}
@@ -85,7 +85,7 @@ class TestSuite
 
 		let length = this.values.length
 		
-		if(length % 2 == 0)
+		if(length % 2 === 0)
 		{
 			this.internal.median = (this.values[length/2] + this.values[(length/2) - 1])/2n
 		}
@@ -99,7 +99,7 @@ class TestSuite
 
 	get mode()
 	{
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return 0n
 		}
@@ -113,7 +113,7 @@ class TestSuite
 		for(let i = 0; i < this.values.length; i++)
 		{
 			let valStr = this.values[i].toString()
-			if(typeof modeObj[valStr] == typeof undefined)
+			if(typeof modeObj[valStr] === typeof undefined)
 			{
 				modeObj[valStr] = 1
 			}
@@ -136,7 +136,7 @@ class TestSuite
 				testObj.num = [num]
 				testObj.count = modeObj[num]
 			}
-			else if(modeObj[num] == testObj.count)
+			else if(modeObj[num] === testObj.count)
 			{
 				testObj.num.push(num)
 			}
@@ -153,7 +153,7 @@ class TestSuite
 
 	get sumSquared()
 	{
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return 0n
 		}
@@ -174,7 +174,7 @@ class TestSuite
 
 	get variance()
 	{
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return 0n
 		}
@@ -190,7 +190,7 @@ class TestSuite
 
 	get count()
 	{		
-		if(this.values.length == 0)
+		if(this.values.length === 0)
 		{
 			return {}
 		}

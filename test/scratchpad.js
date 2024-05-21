@@ -198,7 +198,7 @@ let test = () =>
 		let ran = adjust(Math.random())
 		let ranString = ran.toString()
 		let final = ranString[ranString.length -1]
-		if(final%2 == 0)
+		if(final%2 === 0)
 		{
 			even++
 		}

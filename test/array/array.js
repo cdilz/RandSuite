@@ -17,19 +17,19 @@ arng.push('c')
 arng.push('d')
 arng.push('e')
 
-console.log(`Peek 'e': ${arng.peek() == 'e'}`)
-console.log(`Pop 'e': ${arng.pop() == 'e'}`)
-console.log(`Peek 'd': ${arng.peek() == 'd'}`)
+console.log(`Peek 'e': ${arng.peek() === 'e'}`)
+console.log(`Pop 'e': ${arng.pop() === 'e'}`)
+console.log(`Peek 'd': ${arng.peek() === 'd'}`)
 
 arng.replace(1, 'car')
-console.log(`Replace Peek 'car': ${arng.peek(1) == 'car'}`)
+console.log(`Replace Peek 'car': ${arng.peek(1) === 'car'}`)
 
 arng.empty()
-console.log(`Array Empty: ${arng.array.length == 0}`)
+console.log(`Array Empty: ${arng.array.length === 0}`)
 
 arng.replaceArray(testArray)
 
-console.log(`Replace Array Peek 4: ${arng.peek() == 4}`)
+console.log(`Replace Array Peek 4: ${arng.peek() === 4}`)
 
 let results = 
 {
