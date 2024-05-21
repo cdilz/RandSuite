@@ -1,7 +1,7 @@
 'use static'
 
-import LoadedArray from '../array/loadedArray.js'
-import Die from './die.js'
+import LoadedArray from '../array/LoadedArray.js'
+import Die from './Die.js'
 
 /**
  * Class representing a numbered game die. Uses {@link loadedArray}
@@ -9,7 +9,7 @@ import Die from './die.js'
  * @extends Die
  * @inheritdoc
  */
-class loadedDie extends Die
+export default class LoadedDie extends Die
 {
 	constructor(generator)
 	{
@@ -42,5 +42,3 @@ class loadedDie extends Die
 		}
 	}
 }
-
-export default loadedDie

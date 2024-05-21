@@ -19,7 +19,7 @@
  * @param {Boolean} faceUp - True if face up, false if it isn't.
  * @param {Number} orientation - Degrees turned the card is. 0 is normal, 180 is upside down.
  */
-class Card
+export default class Card
 {
 	constructor(color, rank, suit, faceUp, orientation)
 	{
@@ -67,5 +67,3 @@ class Card
 		return this.color + ' ' + this.rank + ' of ' + this.suit 
 	}
 }
-
-export default Card

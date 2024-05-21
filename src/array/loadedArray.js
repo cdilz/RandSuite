@@ -1,6 +1,6 @@
 'use strict'
 
-import ArrayRNG from './array.js'
+import ArrayRNG from './Array.js'
 
 /**
  * Class representing a loaded array. That is to say the array has a non-equal chance of an item being selected.
@@ -9,7 +9,7 @@ import ArrayRNG from './array.js'
  * 
  * @inheritdoc
  */
-class LoadedArray extends ArrayRNG
+export default class LoadedArray extends ArrayRNG
 {
 	/**
 	 * Adds a weighted value to the array.
@@ -77,5 +77,3 @@ class LoadedArray extends ArrayRNG
 		}
 	}
 }
-
-export default LoadedArray

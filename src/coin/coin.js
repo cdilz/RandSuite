@@ -6,7 +6,7 @@
  * @param {Generator} generator - The random number generator to use with the coin.
  * @param {Boolean} [outputType=Count.STANDARD] - How the user wants the results output.
  */
-class Coin
+export default class Coin
 {
 	constructor(generator, outputType = Coin.outputTypes.STANDARD)
 	{
@@ -121,5 +121,3 @@ class Coin
 		return output
 	}
 }
-
-export default Coin

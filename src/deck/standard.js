@@ -1,7 +1,7 @@
 'use strict'
 
-import Deck from './base/deck.js'
-import Card from './base/card.js'
+import Deck from './base/Deck.js'
+import Card from './base/Card.js'
 
 /**
  * Class representing a standard deck of playing cards.
@@ -12,7 +12,7 @@ import Card from './base/card.js'
  * 
  * @inheritdoc
  */
-class Standard extends Deck
+export default class Standard extends Deck
 {
 	constructor(generator)
 	{
@@ -38,5 +38,3 @@ class Standard extends Deck
 		this.freshDeck = this.deck
 	}
 }
-
-export default Standard

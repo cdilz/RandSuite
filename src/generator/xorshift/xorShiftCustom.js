@@ -1,13 +1,13 @@
 'use strict'
 
-import XorBase from '../base/xorBase.js'
+import XORBase from '../base/XORBase.js'
 
 /**
  * Untested Functionality
  * 
  * Class representing a custom XORShift random number generator.
  * 
- * @extends XorBase
+ * @extends XORBase
  * 
  * @param {Object} args - Contains the number of bits for the generator and the seed.
  * @param {Number} [args.bits=128] - The maximal number of bits the random number can be.
@@ -19,7 +19,7 @@ import XorBase from '../base/xorBase.js'
  * 
  * @inheritdoc
  */
-class XORShiftCustom extends XorBase
+export default class XORShiftCustom extends XORBase
 {
 	constructor(args)
 	{
@@ -129,5 +129,3 @@ class XORShiftCustom extends XorBase
 		return state
 	}
 }
-
-export default XORShiftCustom

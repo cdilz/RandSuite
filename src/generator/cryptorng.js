@@ -1,6 +1,6 @@
 'use strict'
 
-import Generator from './base/generator.js'
+import Generator from './base/Generator.js'
 import crypto from 'crypto'
 
 /**
@@ -10,7 +10,7 @@ import crypto from 'crypto'
  * 
  * @inheritdoc
  */
-class CryptoRNG extends Generator
+export default class CryptoRNG extends Generator
 {
 
 	/**
@@ -33,5 +33,3 @@ class CryptoRNG extends Generator
 		return this.fixBits(randString)
 	}
 }
-
-export default CryptoRNG

@@ -1,17 +1,17 @@
 'use strict'
 
-import XorBase from '../base/xorBase.js'
+import XORBase from '../base/XORBase.js'
 
 /**
  * Untested Functionality
  * 
  * Class representing the XORShift+ random number generator.
  * 
- * @extends XorBase
+ * @extends XORBase
  * 
  * @inheritdoc
  */
-class XORShiftPlus extends XorBase
+export default class XORShiftPlus extends XORBase
 {
 	constructor(args)
 	{
@@ -41,5 +41,3 @@ class XORShiftPlus extends XorBase
 		return this.fixBits(x + y)
 	}
 }
-
-export default XORShiftPlus

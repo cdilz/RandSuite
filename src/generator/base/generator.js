@@ -10,7 +10,7 @@ import crypto from 'crypto'
  * @param {BigInt|Number|String|Buffer} [args.seed] - The seed for the random number generator. (May be ignored)
  */
 
-class Generator
+export default class Generator
 {
 	/**
 	 * Minimum value for RNG based on bits.
@@ -333,5 +333,3 @@ class Generator
 		return Number(output)
 	}
 }
-
-export default Generator

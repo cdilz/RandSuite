@@ -5,7 +5,7 @@
  * 
  * @param {Generator} generator - The random number generator to use with the array.
  */
-class ArrayRNG
+export default class ArrayRNG
 {
 	constructor(generator)
 	{
@@ -85,5 +85,3 @@ class ArrayRNG
 		return this.array[index]
 	}
 }
-
-export default ArrayRNG

@@ -1,6 +1,6 @@
 'use strict'
 
-import Generator from './base/generator.js'
+import Generator from './base/Generator.js'
 
 /**
  * Class representing a middle square number generator with a crypto backend.
@@ -9,7 +9,7 @@ import Generator from './base/generator.js'
  * 
  * @inheritdoc
  */
-class MiddleSquare extends Generator
+export default class MiddleSquare extends Generator
 {
 	/**
 	 * Minimum value for RNG based on bits.
@@ -108,5 +108,3 @@ class MiddleSquare extends Generator
 		return this.fixBits(newState)
 	}
 }
-
-export default MiddleSquare

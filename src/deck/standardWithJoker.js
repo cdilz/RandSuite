@@ -1,7 +1,7 @@
 'use strict'
 
-import Card from './base/card.js'
-import Standard from './base/deck.js'
+import Card from './base/Card.js'
+import Standard from './base/Deck.js'
 
 /**
  * Class representing a standard deck of playing cards with Jokers added in.
@@ -12,7 +12,7 @@ import Standard from './base/deck.js'
  * 
  * @inheritdoc
  */
-class StandardWithJoker extends Standard
+export default class StandardWithJoker extends Standard
 {
 	constructor(randSuite)
 	{
@@ -24,5 +24,3 @@ class StandardWithJoker extends Standard
 		this.freshDeck = this.deck
 	}
 }
-
-export default StandardWithJoker

@@ -1,17 +1,17 @@
 'use strict'
 
-import XorBase from '../base/xorBase.js'
+import XORBase from '../base/XORBase.js'
 
 /**
  * Untested Functionality
  * 
  * Class representing the XORWow random number generator.
  * 
- * @extends XorBase
+ * @extends XORBase
  * 
  * @inheritdoc
  */
-class XORWow extends XorBase
+export default class XORWow extends XORBase
 {
 	constructor(args)
 	{
@@ -44,5 +44,3 @@ class XORWow extends XorBase
 		return this.fixBits(x + this.state[5])
 	}
 }
-
-export default XORWow

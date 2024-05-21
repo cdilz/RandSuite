@@ -6,7 +6,7 @@
  * @param {Generator} generator - Random number generator used to roll the die.
  * @param {BigInt} [sides=6] - The number of sides the die has, defaults to 6.
  */
-class Die
+export default class Die
 {
 	constructor(generator, sides = 6n)
 	{
@@ -99,5 +99,3 @@ class Die
 		return output
 	}
 }
-
-export default Die

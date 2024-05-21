@@ -5,7 +5,7 @@
 		- Automatically generate triple from bits
 */
 
-import Generator from './generator.js'
+import Generator from './Generator.js'
 
 /**
  * Class representing a random number generator that uses XOR Shift.
@@ -21,7 +21,7 @@ import Generator from './generator.js'
  * 
  * @inheritdoc
  */
-class XorBase extends Generator
+export default class XORBase extends Generator
 {
 	get min() {return 1n}
 
@@ -50,5 +50,3 @@ class XorBase extends Generator
 		return x
 	}
 }
-
-export default XorBase

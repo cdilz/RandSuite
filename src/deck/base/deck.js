@@ -7,7 +7,7 @@
  * 
  * @param {Generator} generator - Random number generator to use with the deck.
  */
-class Deck
+export default class Deck
 {
 	constructor(generator)
 	{
@@ -114,5 +114,3 @@ class Deck
 		return this.deck[index]
 	}
 }
-
-export default Deck

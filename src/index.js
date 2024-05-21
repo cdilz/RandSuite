@@ -1,14 +1,14 @@
 'use strict'
 
-import Generator from './generator/base/generator.js'
-import CryptoRNG from './generator/cryptorng.js'
-import MathRNG from './generator/mathrng.js'
-import XORBase from './generator/base/xorBase.js'
-import XORCustom from './generator/xorshift/xorShiftCustom.js'
-import XORShiftPlus from './generator/xorshift/xorShiftPlus.js'
-import XORShiftStar from './generator/xorshift/xorShiftStar.js'
-import XORWow from './generator/xorshift/xorWow.js'
-import MiddleSquare from './generator/middleSquare.js'
+import Generator from './generator/base/Generator.js'
+import CryptoRNG from './generator/CryptoRNG.js'
+import MathRNG from './generator/MathRNG.js'
+import XORBase from './generator/base/XORBase.js'
+import XORCustom from './generator/xorshift/XORShiftCustom.js'
+import XORShiftPlus from './generator/xorshift/XORShiftPlus.js'
+import XORShiftStar from './generator/xorshift/XORShiftStar.js'
+import XORWow from './generator/xorshift/XORWow.js'
+import MiddleSquare from './generator/MiddleSquare.js'
 
 let generator =
 {
@@ -26,8 +26,8 @@ let generator =
 	}
 }
 
-import ArrayRNG from './array/array.js'
-import LoadedArray from './array/loadedArray.js'
+import ArrayRNG from './array/Array.js'
+import LoadedArray from './array/LoadedArray.js'
 
 let array =
 {
@@ -35,9 +35,9 @@ let array =
 	LOADED: LoadedArray
 }
 
-import Deck from './deck/base/deck.js'
-import Standard from './deck/standard.js'
-import StandardWithJoker from './deck/standardWithJoker.js'
+import Deck from './deck/base/Deck.js'
+import Standard from './deck/Standard.js'
+import StandardWithJoker from './deck/StandardWithJoker.js'
 
 let deck =
 {
@@ -49,22 +49,22 @@ let deck =
 		}
 }
 
-import Die from './die/die.js'
-import LoadedDie from './die/loadedDie.js'
+import Die from './die/Die.js'
+import LoadedDie from './die/LoadedDie.js'
 
 let die =
 {
 	BASE: Die,
 	LOADED: LoadedDie
 }
-import Coin from './coin/coin.js'
+import Coin from './coin/Coin.js'
 
 let coin =
 {
 	BASE: Coin
 }
 
-import Card from './deck/base/card.js'
+import Card from './deck/base/Card.js'
 
 let card =
 {

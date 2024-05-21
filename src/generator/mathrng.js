@@ -1,6 +1,6 @@
 'use strict'
 
-import Generator from './base/generator.js'
+import Generator from './base/Generator.js'
 
 /**
  * Class representing a random number generator that uses the built in Math.random().
@@ -9,7 +9,7 @@ import Generator from './base/generator.js'
  * 
  * @inheritdoc
  */
-class MathRNG extends Generator
+export default class MathRNG extends Generator
 {
 	/**
 	 * 'Adjusts' a floating point by removing non-decimal characters.
@@ -41,5 +41,3 @@ class MathRNG extends Generator
 		return this.fixBits(rand) //rand % (this.max + 1n)
 	}
 }
-
-export default MathRNG

@@ -1,8 +1,8 @@
 'use strict'
 
-import GENERATOR from './base/generator.js'
-import CRYPTO from './cryptorng.js'
-import MATH from './mathrng.js'
+import GENERATOR from './base/Generator.js'
+import CRYPTO from './CryptoRNG.js'
+import MATH from './MathRNG.js'
 
 let GenList = 
 {
