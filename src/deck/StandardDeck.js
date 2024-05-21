@@ -12,7 +12,7 @@ import Card from './base/Card.js'
  * 
  * @inheritdoc
  */
-export default class Standard extends Deck
+export default class StandardDeck extends Deck
 {
 	constructor(generator)
 	{

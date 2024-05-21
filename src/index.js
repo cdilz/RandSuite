@@ -36,16 +36,16 @@ let array =
 }
 
 import Deck from './deck/base/Deck.js'
-import Standard from './deck/Standard.js'
-import StandardWithJoker from './deck/StandardWithJoker.js'
+import StandardDeck from './deck/StandardDeck.js'
+import StandardDeckWithJoker from './deck/StandardDeckWithJoker.js'
 
 let deck =
 {
 	BASE: Deck,
 	STANDARD: 
 		{
-			BASE: Standard,
-			JOKER: StandardWithJoker
+			BASE: StandardDeck,
+			JOKER: StandardDeckWithJoker
 		}
 }
 
