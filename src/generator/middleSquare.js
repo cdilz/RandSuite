@@ -23,7 +23,7 @@ export default class MiddleSquare extends Generator
 		console.warn('Number sequence may repeat and definitely do on smaller bit ranges.')
 		super(args)
 
-		if(this.bits == 1)
+		if(this.bits === 1)
 		{
 			this.seedBits = 3
 		}
@@ -42,14 +42,14 @@ export default class MiddleSquare extends Generator
 	 */
 	makeWeyl()
 	{
-		if(typeof this.weyl == typeof undefined)
+		if(typeof this.weyl === typeof undefined)
 		{
 			let maxWeyl = (2n ** BigInt(this.seedBits)) - 1n
 			// Try using 90% of max as a Weyl sequence
 			// let mid = (maxWeyl * 9n) / 10n
 			let mid = maxWeyl/(BigInt(this.seedBits) * 2n)
 			// Means it's even, but we want odd
-			if(mid % 2n == 0n)
+			if(mid % 2n === 0n)
 			{
 				mid++
 			}

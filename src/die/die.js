@@ -11,7 +11,7 @@ export default class Die
 	constructor(generator, sides = 6n)
 	{
 		this.generator = generator
-		this.sides = generator.toBigInt(sides)
+		this.sides = this.generator.toBigInt(sides)
 	}
 
 	/**
