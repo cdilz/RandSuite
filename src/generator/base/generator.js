@@ -304,6 +304,15 @@ export default class Generator
 		let rand = this.numberBetween(0, 1)
 		return !!rand
 	}
+
+	arrayEntry(array) {
+		const min = 0n
+		const max = this.toBigInt(array.length)
+		const index_bigint = this.numberBetween(min, max)
+		const index = Number(index_bigint)
+
+		return array[index]
+	}
 	
 	/**
 	 * Selects a random character from a string
