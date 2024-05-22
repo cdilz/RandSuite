@@ -40,14 +40,26 @@ export default class LoadedArray extends ArrayRNG
 	{
 		try 
 		{
-			let min = 0n
+			/*
+				If this is 0 then the minimum weight has to be 0
+
+				If the weight is 0 then it should never be chosen
+
+				Thus our next integer is 1n and is the next weight
+			*/
+			let min = 1n
 			let max = 0n
 			let weightedArray = []
 	
 			for(let i = 0; i < this.array.length; i++)
 			{
-				let entry = this.array[i]
-				max += this.generator.toBigInt(entry.weight)
+				const entry = this.array[i]
+				const weight = this.generator.toBigInt(entry.weight)
+				// Don't allow 0 weight objects through at all
+				if(entry.weight === 0n) {
+					continue;
+				}
+				max += weight
 				let option = 
 				{
 					min,
@@ -58,7 +70,7 @@ export default class LoadedArray extends ArrayRNG
 				min = max + 1n
 			}
 			
-			let chance = this.generator.numberBetween(0, max)
+			let chance = this.generator.numberBetween(1n, max)
 	
 			for(let i = 0; i < weightedArray.length; i++)
 			{
